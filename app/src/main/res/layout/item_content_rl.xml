@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11px"
+    android:layout_marginLeft="12px">
+<ImageView
+    android:layout_width="44px"
+    android:layout_height="44px"
+    android:src="@drawable/rl_picture"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="分类名称"
+        android:textSize="8px"
+        android:textColor="#e6242424"
+        android:layout_marginTop="9px"/>
+</LinearLayout>

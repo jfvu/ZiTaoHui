@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="78px"
+    android:layout_height="32px"
+    android:id="@+id/ll_classname_lv">
+<TextView
+    android:id="@+id/tv_classname_lv"
+    android:layout_width="78px"
+    android:layout_height="32px"
+    android:textColor="#121212"
+    android:textSize="14px"
+    android:gravity="center"
+    android:layout_gravity="center"/>
+</LinearLayout>
