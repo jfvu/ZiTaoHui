@@ -45,15 +45,75 @@
             android:textColorHint="#242424"
             android:textSize="12px"/>
     </RelativeLayout>
-    <ListView
-        android:id="@+id/lv_class_fragment_class"
+    <RadioGroup
+        android:id="@+id/rg_class_fragment_class"
         android:layout_width="78px"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_seach_fragment_class"
         android:layout_marginTop="12px"
         android:layout_marginLeft="12px"
-        android:divider="@null">
-    </ListView>
+        >
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="推荐分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="明星分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="其他分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="精选分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="热销分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="32px"
+            android:button="@null"
+            android:text="关注分类"
+            android:gravity="center"
+            android:textSize="14px"
+            android:textColor="#242424"
+            android:background="@drawable/select_radiobuttonbg"
+            />
+    </RadioGroup>
     <RelativeLayout
         android:id="@+id/rl_title_classname_fragment_class"
         android:layout_width="match_parent"

@@ -1,23 +1,15 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -40,8 +31,8 @@ import butterknife.Unbinder;
 public class ClassFragment extends BaseFragment {
     @BindView(R.id.et_input_fragment_class)
     EditText etInputFragmentClass;
-    @BindView(R.id.lv_class_fragment_class)
-    ListView lvClassFragmentClass;
+    /*@BindView(R.id.lv_class_fragment_class)
+    ListView lvClassFragmentClass;*/
     @BindView(R.id.tv_classname_fragment_class)
     TextView tvClassnameFragmentClass;
     @BindView(R.id.rv_content_fragment_class)
@@ -120,7 +111,7 @@ public class ClassFragment extends BaseFragment {
         number.add(77);
 
 
-        myClassNameAdapter = new MyClassNameAdapter();
+        /*myClassNameAdapter = new MyClassNameAdapter();
         lvClassFragmentClass.setAdapter(new MyClassNameAdapter());
         tvClassnameFragmentClass.setText(classNames.get(0).getName());
         lvClassFragmentClass.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -138,7 +129,7 @@ public class ClassFragment extends BaseFragment {
                 flag = position;
 
             }
-        });
+        });*/
         myRlAdapter = new MyRlAdapter(R.layout.item_content_rl,getEetityclasses(number.get(0)));
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         //linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
