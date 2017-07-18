@@ -85,14 +85,15 @@
             android:layout_centerVertical="true"/>
     </RelativeLayout>
 
-    <me.kaelaela.verticalviewpager.VerticalViewPager
+    <fr.castorflex.android.verticalviewpager.VerticalViewPager
         android:id="@+id/yvp_fragment_class"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_title_classname_fragment_class"
         android:layout_marginLeft="90px"
         android:layout_marginTop="8px"
+
         >
 
-    </me.kaelaela.verticalviewpager.VerticalViewPager>
+    </fr.castorflex.android.verticalviewpager.VerticalViewPager>
 </RelativeLayout>

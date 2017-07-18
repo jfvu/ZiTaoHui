@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.OneOfClassActivity;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
@@ -28,6 +31,7 @@ public class ClassCenterFragment extends BaseFragment {
     Unbinder unbinder;
     private int mInt;
     private List<Entityclass> entityclasses = new ArrayList<>();
+    private Intent mIntent;
 
     public ClassCenterFragment(int anInt) {
         mInt = anInt;
@@ -62,7 +66,7 @@ public class ClassCenterFragment extends BaseFragment {
         }
 
         @Override
-        public void onBindViewHolder(ContactsViewHolder holder, int position) {
+        public void onBindViewHolder(ContactsViewHolder holder, final int position) {
             List<Entityclass> list = getEetityclasses(mInt);
 
            holder.tvIndex.setText(list.get(position).getName());
@@ -70,7 +74,10 @@ public class ClassCenterFragment extends BaseFragment {
             holder.mLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Toast.makeText(getActivity(), ""+position, Toast.LENGTH_SHORT).show();
+                    mIntent = new Intent(getActivity(), OneOfClassActivity.class);
+                    mIntent.putExtra("OneOfClassActivity",position);
+                    startActivity(mIntent);
 
 
                 }

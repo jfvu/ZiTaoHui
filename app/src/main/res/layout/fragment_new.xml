@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f9f9f9">
+<ImageView
+    android:id="@+id/img_fragment_new"
+    android:layout_width="match_parent"
+    android:layout_height="160px"
+    android:src="@drawable/new_img"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:layout_below="@id/img_fragment_new">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_fragment_new"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+</RelativeLayout>

@@ -18,12 +18,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.kaelaela.verticalviewpager.VerticalViewPager;
-import me.kaelaela.verticalviewpager.transforms.DefaultTransformer;
 import q.rorbin.verticaltablayout.VerticalTabLayout;
 import q.rorbin.verticaltablayout.adapter.TabAdapter;
 import q.rorbin.verticaltablayout.widget.ITabView;
 import q.rorbin.verticaltablayout.widget.TabView;
+
 
 /**
  * Created by jiaofeng on 2017/7/16.
@@ -38,8 +37,9 @@ public class ClassFragment extends BaseFragment {
     @BindView(R.id.vtl_class_fragment_class)
     VerticalTabLayout mVtlClassFragmentClass;
     @BindView(R.id.yvp_fragment_class)
-    VerticalViewPager mYvpFragmentClass;
+    fr.castorflex.android.verticalviewpager.VerticalViewPager mYvpFragmentClass;
     Unbinder unbinder1;
+
 
 
     private List<ClassName> classNames;
@@ -84,12 +84,12 @@ public class ClassFragment extends BaseFragment {
         number.add(77);
         myFregmentAdapter3 = new MyFregmentAdapter3(getChildFragmentManager(),getActivity());
         mYvpFragmentClass.setAdapter(myFregmentAdapter3);
-        mYvpFragmentClass.setPageTransformer(true, new DefaultTransformer());
-        mVtlClassFragmentClass.setupWithViewPager(mYvpFragmentClass);
+
         mVtlClassFragmentClass.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabView tab, int position) {
                 tvClassnameFragmentClass.setText(classNames.get(position).getName());
+                mYvpFragmentClass.setCurrentItem(position);
             }
 
             @Override
@@ -125,8 +125,7 @@ public class ClassFragment extends BaseFragment {
             }
         });
 
-        //mYvpFragmentClass.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mVtlClassFragmentClass));
-        mYvpFragmentClass.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            mYvpFragmentClass.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -134,7 +133,7 @@ public class ClassFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-
+            mVtlClassFragmentClass.setTabSelected(position);
             }
 
             @Override
@@ -142,9 +141,6 @@ public class ClassFragment extends BaseFragment {
 
             }
         });
-
-        //mVtlClassFragmentClass.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mYvpFragmentClass));
-
 
     }
 
