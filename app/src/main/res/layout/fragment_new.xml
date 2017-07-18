@@ -2,12 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#f9f9f9">
+                android:background="#f9f9f9"
+    android:layout_marginTop="1px">
 <ImageView
     android:id="@+id/img_fragment_new"
-    android:layout_width="match_parent"
+    android:layout_width="375px"
     android:layout_height="160px"
-    android:src="@drawable/new_img"/>
+    android:background="@drawable/new_img"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+    <ImageView
+        android:id="@+id/img_triangle"
+        android:layout_width="32px"
+        android:layout_height="32px"
+        android:background="@drawable/layer_triangle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128px"/>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

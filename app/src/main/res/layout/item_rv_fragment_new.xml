@@ -3,13 +3,16 @@
               android:orientation="vertical"
               android:layout_width="114px"
               android:layout_height="wrap_content"
-    android:background="@drawable/item_bg">
+    android:background="@drawable/item_bg"
+    android:layout_marginTop="8px"
+    android:layout_marginLeft="18px">
 <ImageView
     android:id="@+id/img_rv_fragment_new"
     android:layout_width="114px"
-    android:layout_height="wrap_content"
-    android:src="@drawable/item_img"/>
+    android:layout_height="108px"
+    android:background="@drawable/item_img"/>
     <TextView
+        android:id="@+id/tv_name_rv_fragment_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="名称名称"
@@ -33,6 +36,7 @@
     android:textSize="7px"
     android:layout_gravity="center_vertical"/>
         <TextView
+            android:id="@+id/tv_price_rv_fragment_new"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="￥4000起"

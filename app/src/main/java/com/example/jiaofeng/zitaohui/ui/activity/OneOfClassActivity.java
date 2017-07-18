@@ -2,6 +2,12 @@ package com.example.jiaofeng.zitaohui.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -11,8 +17,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.LeastFragment;
+import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.NewFragment;
+import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.SoonFragment;
+import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.SynthesizeFragment;
+import com.example.jiaofeng.zitaohui.utils.PullListPop;
+
+import java.lang.reflect.Method;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OneOfClassActivity extends BaseActivity {
@@ -40,9 +54,24 @@ public class OneOfClassActivity extends BaseActivity {
     private static final String FRAGMENT_TAG_SOON = "fragment_soon";
     private static final String FRAGMENT_TAG_SYNTHESIZE = "fragment_synthesize";
     private static final String FRAGMENT_TAG_LEAST = "fragment_least";
+    @BindView(R.id.img_history_activity_oneofclass)
+    ImageView mImgHistoryActivityOneofclass;
     private Intent mIntent;
-    private String[] mFragmentTags = new String[]{FRAGMENT_TAG_NEW, FRAGMENT_TAG_SOON, FRAGMENT_TAG_SYNTHESIZE,FRAGMENT_TAG_LEAST};
+    private String[] mFragmentTags = new String[]{FRAGMENT_TAG_NEW, FRAGMENT_TAG_SOON, FRAGMENT_TAG_SYNTHESIZE, FRAGMENT_TAG_LEAST};
     private String mFragmentCurrentTag = FRAGMENT_TAG_NEW;
+    private LeastFragment mLeastFragment;
+    private NewFragment mNewFragment;
+    private SoonFragment mSoonFragment;
+    private SynthesizeFragment mSynthesizeFragment;
+    private PullListPop mPop;
+
+    @Override
+    protected void init(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            restoreFragments();
+            mFragmentCurrentTag = savedInstanceState.getString(KEY_FRAGMENT_TAG);
+        }
+    }
 
     @Override
     protected void initData() {
@@ -51,8 +80,10 @@ public class OneOfClassActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mRbNew.setChecked(true);
         mIntent = getIntent();
         mTvClassnameActivityOneofclass.setText(mIntent.getIntExtra("OneOfClassActivity", 0) + "分类");
+        onTabSelect(mFragmentCurrentTag);
     }
 
     @Override
@@ -71,21 +102,136 @@ public class OneOfClassActivity extends BaseActivity {
     }
 
 
-
-    @OnClick({R.id.img_return_activity_oneofclass, R.id.rb_new, R.id.rb_soon, R.id.rb_synthesize, R.id.rb_least})
+    @OnClick({R.id.img_return_activity_oneofclass, R.id.rb_new, R.id.rb_soon, R.id.rb_synthesize, R.id.rb_least,R.id.img_history_activity_oneofclass})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_return_activity_oneofclass:
                 finish();
                 break;
             case R.id.rb_new:
+                mFragmentCurrentTag = FRAGMENT_TAG_NEW;
+                onTabSelect(mFragmentCurrentTag);
                 break;
             case R.id.rb_soon:
+                mFragmentCurrentTag = FRAGMENT_TAG_SOON;
+                onTabSelect(mFragmentCurrentTag);
                 break;
             case R.id.rb_synthesize:
+                mFragmentCurrentTag = FRAGMENT_TAG_SYNTHESIZE;
+                onTabSelect(mFragmentCurrentTag);
                 break;
             case R.id.rb_least:
+                //mFragmentCurrentTag = FRAGMENT_TAG_LEAST;
+                if (mPop == null) {
+                    mPop = new PullListPop(getBaseContext(), onClickListener);
+
+                    mPop.showAtLocation(this.findViewById(R.id.rl_1), Gravity.TOP, 0, 0);
+                } else {
+                    mPop.dismiss();
+                }
+                break;
+            case R.id.img_history_activity_oneofclass:
                 break;
         }
+
+    }
+
+    /**
+     * 恢复fragment
+     */
+    private void restoreFragments() {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        for (int i = 0; i < mFragmentTags.length; i++) {
+            Fragment fragment = manager.findFragmentByTag(mFragmentTags[i]);
+            if (fragment == null)
+                return;
+            if (fragment instanceof LeastFragment) {
+                mLeastFragment = (LeastFragment) fragment;
+            } else if (fragment instanceof NewFragment) {
+                mNewFragment = (NewFragment) fragment;
+            } else if (fragment instanceof SoonFragment) {
+                mSoonFragment = (SoonFragment) fragment;
+            } else if (fragment instanceof SynthesizeFragment) {
+                mSynthesizeFragment = (SynthesizeFragment) fragment;
+            }
+            transaction.hide(fragment);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        outState.putString(KEY_FRAGMENT_TAG, mFragmentCurrentTag);
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    /**
+     * 先全部隐藏
+     *
+     * @param fragmentManager
+     * @param transaction
+     */
+    private void hideFragments(FragmentManager fragmentManager, FragmentTransaction transaction) {
+        for (int i = 0; i < mFragmentTags.length; i++) {
+            Fragment fragment = fragmentManager.findFragmentByTag(mFragmentTags[i]);
+            if (fragment != null && fragment.isVisible()) {
+                transaction.hide(fragment);
+            }
+        }
+    }
+
+    private void selectedFragment(FragmentTransaction transaction, Fragment fragment, Class<?> clazz, String tag) {
+        if (fragment == null) {
+            try {
+                Method newInstanceMethod = clazz.getDeclaredMethod("newInstance");
+                fragment = (Fragment) newInstanceMethod.invoke(null);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            transaction.add(R.id.fl_activity_oneofclass, fragment, tag);
+        }
+        transaction.show(fragment);
+        transaction.commit();
+    }
+
+    public void onTabSelect(String tag) {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        hideFragments(manager, transaction);
+        if (tag == FRAGMENT_TAG_NEW) {
+            selectedFragment(transaction, mNewFragment, NewFragment.class, tag);
+            mRbNew.setChecked(true);
+        } else if (tag == FRAGMENT_TAG_SOON) {
+            selectedFragment(transaction, mSoonFragment, SoonFragment.class, tag);
+            mRbSoon.setChecked(true);
+        } else if (tag == FRAGMENT_TAG_SYNTHESIZE) {
+            selectedFragment(transaction, mSynthesizeFragment, SynthesizeFragment.class, tag);
+            mRbSynthesize.setChecked(true);
+        } else if (tag == FRAGMENT_TAG_LEAST) {
+            selectedFragment(transaction, mLeastFragment, LeastFragment.class, tag);
+            mRbLeast.setChecked(true);
+        }
+    }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.ll_qr_share:
+                    mPop.dismiss();
+                    break;
+                case R.id.ll_link_share:
+                    mPop.dismiss();
+                    break;
+            }
+        }
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

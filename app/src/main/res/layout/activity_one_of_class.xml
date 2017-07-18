@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rl_1"
     tools:context="com.example.jiaofeng.zitaohui.ui.activity.OneOfClassActivity">
     <LinearLayout
         android:id="@+id/ll_status_activity_oneofclass"
@@ -97,4 +98,13 @@
         android:layout_below="@id/rg_activity_oneofclass">
 
     </FrameLayout>
+    <ImageView
+        android:id="@+id/img_history_activity_oneofclass"
+        android:layout_width="56px"
+        android:layout_height="56px"
+        android:src="@drawable/history"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="72px"
+        android:layout_marginRight="12px"/>
 </RelativeLayout>

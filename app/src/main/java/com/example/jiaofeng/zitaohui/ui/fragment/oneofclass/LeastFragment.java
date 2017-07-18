@@ -8,6 +8,9 @@ import com.example.jiaofeng.zitaohui.ui.fragment.BaseFragment;
  */
 
 public class LeastFragment extends BaseFragment {
+    public static LeastFragment newInstance() {
+        return new LeastFragment();
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_least;
