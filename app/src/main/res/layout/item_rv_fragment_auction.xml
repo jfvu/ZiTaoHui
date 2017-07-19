@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bg"
+    android:layout_marginLeft="12px"
+    android:layout_marginTop="8px"
+    android:layout_marginRight="12px"
+    >
+    <ImageView
+        android:id="@+id/img_fragment_auction"
+        android:layout_width="match_parent"
+        android:layout_height="160px"
+        android:layout_margin="8px"
+        android:background="@drawable/new_img"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/concern_bg"
+        android:layout_alignBottom="@id/img_fragment_auction"
+        android:layout_marginLeft="8px"
+        android:layout_marginRight="8px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内容内容内容内容内容内容内容内容内容内容"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8px"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="专场状态："
+        android:textColor="#E6000000"
+        android:textSize="11px"
+        android:layout_below="@id/img_fragment_auction"
+        android:layout_marginLeft="8px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_3"
+        android:layout_below="@id/img_fragment_auction"
+        android:text="拍卖进行中"
+        android:textColor="#FF0000"
+        android:textSize="11px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_3"
+        android:layout_marginLeft="8px"
+        android:text="截拍时间：07.09 14:00-07.16 14:00"
+        android:textColor="#E6000000"
+        android:textSize="11px"
+        android:layout_marginTop="8px"
+        android:layout_marginBottom="12px"/>
+</RelativeLayout>
+</RelativeLayout>

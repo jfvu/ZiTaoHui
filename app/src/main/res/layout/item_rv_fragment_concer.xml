@@ -67,16 +67,80 @@
         android:layout_below="@id/img_fragment_concern"
         android:layout_marginTop="8px"
         android:layout_marginLeft="8px"/>
-    <TextView
-        android:id="@+id/tv_number_share"
+    <LinearLayout
+        android:id="@+id/ll_share_fragment_concern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="12"
-        android:textSize="10px"
-        android:textColor="#40121212"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         android:layout_marginRight="8px"
-        android:layout_marginBottom="12px"/>
+        android:layout_marginBottom="12px"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/img_share_fragment_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/concer_share"/>
+        <TextView
+            android:id="@+id/tv_number_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="12px"
+            android:textColor="#40121212"
+            android:layout_marginLeft="2px"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_collect_fragment_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_toLeftOf="@id/ll_share_fragment_concern"
+        android:layout_marginRight="12px"
+        android:layout_marginBottom="12px"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/img_collect_fragment_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/concer_collect"/>
+        <TextView
+            android:id="@+id/tv_number_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="12px"
+            android:textColor="#40121212"
+            android:layout_marginLeft="2px"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_heat_fragment_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_toLeftOf="@id/ll_collect_fragment_concern"
+        android:layout_marginRight="12px"
+        android:layout_marginBottom="12px"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/img_heat_fragment_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/concer_heat"/>
+        <TextView
+            android:id="@+id/tv_number_heat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="12px"
+            android:textColor="#40121212"
+            android:layout_marginLeft="2px"
+            />
+    </LinearLayout>
 </RelativeLayout>
 </RelativeLayout>

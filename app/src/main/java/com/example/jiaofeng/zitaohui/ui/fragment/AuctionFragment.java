@@ -1,19 +1,22 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
-import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
-import com.example.jiaofeng.zitaohui.utils.SharePop;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -21,10 +24,11 @@ import butterknife.Unbinder;
  */
 
 public class AuctionFragment extends BaseFragment {
-    @BindView(R.id.btn_test)
-    Button btnTest;
+
+
+    @BindView(R.id.rv_fragment_auction)
+    RecyclerView mRvFragmentAuction;
     Unbinder unbinder;
-    private SharePop sharePop;
 
     @Override
     protected int getLayoutId() {
@@ -38,40 +42,49 @@ public class AuctionFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        mRvFragmentAuction.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRvFragmentAuction.setAdapter(new MyAdapter());
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    @OnClick(R.id.btn_test)
-    public void onViewClicked() {
-        /*sharePop = new SharePop(getActivity(),onClickListener);
-        sharePop.showAtLocation(getActivity().findViewById(R.id.rl_rl), Gravity.BOTTOM,0,0);*/
-        startActivity(new Intent(getActivity(), MyHistoryActivity.class));
-    }
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.ll_qr_share:
-                    sharePop.dismiss();
-                    break;
-                case R.id.ll_link_share:
-                    sharePop.dismiss();
-                    break;
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_rv_fragment_auction, parent, false);
+            AutoUtils.autoSize(view);
+            return new ViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(ViewHolder holder, final int position) {
+            holder.mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 10;
+        }
+
+        class ViewHolder extends RecyclerView.ViewHolder {
+            private ImageView mView;
+            private TextView mView1;
+            private TextView mView2;
+            private Button mButton;
+            private RelativeLayout mLayout;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                mView = (ImageView) itemView.findViewById(R.id.img_fragment_auction);
             }
         }
-    };
+    }
+
+
 }
