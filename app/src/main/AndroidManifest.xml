@@ -26,6 +26,8 @@
         <activity android:name=".ui.activity.ShareActivity"/>
         <activity android:name=".ui.activity.OneOfClassActivity">
         </activity>
+        <activity android:name=".ui.activity.MyHistoryActivity">
+        </activity>
     </application>
 
 </manifest>

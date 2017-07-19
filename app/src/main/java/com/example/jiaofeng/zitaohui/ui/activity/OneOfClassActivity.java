@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -21,12 +22,12 @@ import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.LeastFragment;
 import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.NewFragment;
 import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.SoonFragment;
 import com.example.jiaofeng.zitaohui.ui.fragment.oneofclass.SynthesizeFragment;
+import com.example.jiaofeng.zitaohui.utils.HistoryPop;
 import com.example.jiaofeng.zitaohui.utils.PullListPop;
 
 import java.lang.reflect.Method;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OneOfClassActivity extends BaseActivity {
@@ -64,6 +65,7 @@ public class OneOfClassActivity extends BaseActivity {
     private SoonFragment mSoonFragment;
     private SynthesizeFragment mSynthesizeFragment;
     private PullListPop mPop;
+    private HistoryPop mHistoryPop;
 
     @Override
     protected void init(Bundle savedInstanceState) {
@@ -84,6 +86,7 @@ public class OneOfClassActivity extends BaseActivity {
         mIntent = getIntent();
         mTvClassnameActivityOneofclass.setText(mIntent.getIntExtra("OneOfClassActivity", 0) + "分类");
         onTabSelect(mFragmentCurrentTag);
+
     }
 
     @Override
@@ -131,6 +134,19 @@ public class OneOfClassActivity extends BaseActivity {
                 }
                 break;
             case R.id.img_history_activity_oneofclass:
+               /* SlidingMenu slidingMenu = new SlidingMenu(this);
+                slidingMenu.setMode(SlidingMenu.RIGHT);
+                slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                slidingMenu.setShadowWidthRes(R.dimen.shadow_width);
+                slidingMenu.setShadowDrawable(R.color.colorAccent);
+                slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+                slidingMenu.setFadeDegree(0.35f);
+                slidingMenu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
+                slidingMenu.setMenu(R.layout.right_menu);*/
+               if (mHistoryPop == null) {
+                   mHistoryPop = new HistoryPop(getApplicationContext());
+                   mHistoryPop.showAtLocation(this.findViewById(R.id.rl_title_activity_oneofclass), Gravity.RIGHT, 0, 0);
+               }
                 break;
         }
 
@@ -228,10 +244,13 @@ public class OneOfClassActivity extends BaseActivity {
         }
     };
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    public boolean onTouchEvent(MotionEvent event) {
+        if (mHistoryPop != null && mHistoryPop.isShowing()){
+            mHistoryPop.dismiss();
+            mHistoryPop = null;
+        }
+        return super.onTouchEvent(event);
     }
 }

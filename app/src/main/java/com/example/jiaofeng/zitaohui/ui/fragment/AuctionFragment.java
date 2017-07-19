@@ -2,14 +2,13 @@ package com.example.jiaofeng.zitaohui.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.jiaofeng.zitaohui.R;
-import com.example.jiaofeng.zitaohui.ui.activity.ShareActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 import com.example.jiaofeng.zitaohui.utils.SharePop;
 
 import butterknife.BindView;
@@ -58,8 +57,9 @@ public class AuctionFragment extends BaseFragment {
 
     @OnClick(R.id.btn_test)
     public void onViewClicked() {
-        sharePop = new SharePop(getActivity(),onClickListener);
-        sharePop.showAtLocation(getActivity().findViewById(R.id.rl_rl), Gravity.BOTTOM,0,0);
+        /*sharePop = new SharePop(getActivity(),onClickListener);
+        sharePop.showAtLocation(getActivity().findViewById(R.id.rl_rl), Gravity.BOTTOM,0,0);*/
+        startActivity(new Intent(getActivity(), MyHistoryActivity.class));
     }
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override

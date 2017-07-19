@@ -1,11 +1,13 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -47,6 +49,7 @@ public class BuyerFragment extends BaseFragment {
     @BindView(R.id.ll_service_fragment_buy)
     LinearLayout mLlServiceFragmentBuy;
     Unbinder unbinder;
+    private Intent mIntent;
 
     @Override
     protected int getLayoutId() {
@@ -89,6 +92,8 @@ public class BuyerFragment extends BaseFragment {
             case R.id.ll_new_fragment_buy:
                 break;
             case R.id.ll_record_fragment_buy:
+                mIntent = new Intent(getActivity(), MyHistoryActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.ll_baby_fragment_buy:
                 break;
