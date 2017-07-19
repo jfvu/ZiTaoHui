@@ -3,6 +3,7 @@ package com.example.jiaofeng.zitaohui.utils;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,6 @@ import butterknife.BindView;
  */
 
 public class HistoryPop extends PopupWindow {
-    @BindView(R.id.rv_right_menu)
     RecyclerView mRvRightMenu;
     private Context context;
     private List<Entity> mList;
@@ -37,7 +37,7 @@ public class HistoryPop extends PopupWindow {
     public HistoryPop(Context context) {
         this.context = context;
         this.view = LayoutInflater.from(context).inflate(R.layout.right_menu, null);
-
+        mRvRightMenu = (RecyclerView) view.findViewById(R.id.rv_right_menu);
         mList = new ArrayList<>();
         Entity entity = new Entity(R.drawable.item_menu_img,"内容内容内容内容内容内容内容","￥：4000起");
         for (int i = 0; i < 10; i++) {
@@ -55,8 +55,8 @@ public class HistoryPop extends PopupWindow {
         ColorDrawable drawable = new ColorDrawable(Color.parseColor("#99121212"));
         this.setBackgroundDrawable(drawable);
 
-        //mRvRightMenu.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false));
-        //mRvRightMenu.setAdapter(new MenuAdapter());
+        mRvRightMenu.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false));
+        mRvRightMenu.setAdapter(new MenuAdapter());
     }
 
 
@@ -89,8 +89,8 @@ public class HistoryPop extends PopupWindow {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view1 = LayoutInflater.from(view.getContext()).inflate(R.layout.item_rv_rightmenu, parent, false);
-            AutoUtils.autoSize(view);
-            return new ViewHolder(view);
+            AutoUtils.autoSize(view1);
+            return new ViewHolder(view1);
         }
 
         @Override

@@ -105,7 +105,7 @@ public class OneOfClassActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.img_return_activity_oneofclass, R.id.rb_new, R.id.rb_soon, R.id.rb_synthesize, R.id.rb_least,R.id.img_history_activity_oneofclass})
+    @OnClick({R.id.img_return_activity_oneofclass, R.id.rb_new, R.id.rb_soon, R.id.rb_synthesize, R.id.rb_least, R.id.img_history_activity_oneofclass})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_return_activity_oneofclass:
@@ -143,10 +143,10 @@ public class OneOfClassActivity extends BaseActivity {
                 slidingMenu.setFadeDegree(0.35f);
                 slidingMenu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
                 slidingMenu.setMenu(R.layout.right_menu);*/
-               if (mHistoryPop == null) {
-                   mHistoryPop = new HistoryPop(getApplicationContext());
-                   mHistoryPop.showAtLocation(this.findViewById(R.id.rl_title_activity_oneofclass), Gravity.RIGHT, 0, 0);
-               }
+                if (mHistoryPop == null) {
+                    mHistoryPop = new HistoryPop(getApplicationContext());
+                }
+                mHistoryPop.showAtLocation(this.findViewById(R.id.rl_title_activity_oneofclass), Gravity.RIGHT, 0, 0);
                 break;
         }
 
@@ -247,10 +247,10 @@ public class OneOfClassActivity extends BaseActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mHistoryPop != null && mHistoryPop.isShowing()){
+        if (mHistoryPop != null && mHistoryPop.isShowing()) {
             mHistoryPop.dismiss();
             mHistoryPop = null;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 }
