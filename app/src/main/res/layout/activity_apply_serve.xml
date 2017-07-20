@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiaofeng.zitaohui.ui.activity.ApplyServeActivity">
+<LinearLayout
+    android:id="@+id/ll_status_activity_applyserve"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"></LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44px"
+        android:layout_below="@id/ll_status_activity_applyserve"
+        android:background="#242424">
+        <ImageView
+            android:id="@+id/img_return_activity_applyserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/all_return"
+            android:padding="12px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="售后申请"
+            android:textColor="#FFFFFFFF"
+            android:textSize="17px"
+            android:gravity="center"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

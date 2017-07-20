@@ -32,7 +32,11 @@
         </activity>
         <activity android:name=".ui.activity.ComplaintSucceActivity">
         </activity>
-        <activity android:name=".ui.activity.OrderActivity">
+        <activity android:name=".ui.activity.BuyOrderActivity">
+        </activity>
+        <activity android:name=".ui.activity.EvaluateActivity">
+        </activity>
+        <activity android:name=".ui.activity.ApplyServeActivity">
         </activity>
     </application>
 

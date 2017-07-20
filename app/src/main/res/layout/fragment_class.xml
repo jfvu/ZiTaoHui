@@ -43,7 +43,7 @@
             android:layout_marginLeft="31px"
             android:background="@null"
             android:hint="请输入您要查找的商品"
-            android:textColorHint="#242424"
+            android:textColorHint="#66242424"
             android:textSize="12px"/>
     </RelativeLayout>
     <q.rorbin.verticaltablayout.VerticalTabLayout

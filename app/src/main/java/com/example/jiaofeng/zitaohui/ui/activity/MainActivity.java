@@ -1,7 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.adapter.MyFregmentAdapter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
@@ -42,7 +40,7 @@ public class MainActivity extends BaseActivity {
         tlActivityMain.getTabAt(1).setCustomView(tab_icon("分类",R.drawable.select_tab_class));
         tlActivityMain.getTabAt(2).setCustomView(tab_icon("发现",R.drawable.select_tab_find));
         tlActivityMain.getTabAt(3).setCustomView(tab_icon("我的",R.drawable.select_tab_my));
-        tlActivityMain.setTabTextColors(Color.parseColor("#121212"),Color.parseColor("#242424"));
+        //tlActivityMain.setTabTextColors(Color.parseColor("#40242424"),Color.parseColor("#121212"));
         tlActivityMain.setTabGravity(TabLayout.GRAVITY_FILL);
         vpActivityMain.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tlActivityMain));
         tlActivityMain.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(vpActivityMain));

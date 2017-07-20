@@ -19,7 +19,7 @@
     android:layout_alignParentBottom="true"
     android:background="#ffffff"
     app:tabSelectedTextColor="#121212"
-    app:tabTextColor="#242424"
+    app:tabTextColor="#66121212"
     app:tabMode="fixed"
     app:tabIndicatorHeight="0px">
 

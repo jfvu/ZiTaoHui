@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.BuyOrderActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.ComplaintActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 
@@ -81,14 +82,29 @@ public class BuyerFragment extends BaseFragment {
             case R.id.rl_indent_fragment_buy:
                 break;
             case R.id.ll_take_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",2);
+                startActivity(mIntent);
                 break;
             case R.id.ll_send_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",1);
+                startActivity(mIntent);
                 break;
             case R.id.ll_nopay_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",0);
+                startActivity(mIntent);
                 break;
             case R.id.ll_noevaluate_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",3);
+                startActivity(mIntent);
                 break;
             case R.id.ll_aftersale_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",4);
+                startActivity(mIntent);
                 break;
             case R.id.ll_new_fragment_buy:
                 break;
