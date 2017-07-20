@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.ComplaintActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 
 import butterknife.BindView;
@@ -102,6 +103,8 @@ public class BuyerFragment extends BaseFragment {
             case R.id.ll_school_fragment_buy:
                 break;
             case R.id.ll_service_fragment_buy:
+                mIntent = new Intent(getActivity(), ComplaintActivity.class);
+                startActivity(mIntent);
                 break;
         }
     }

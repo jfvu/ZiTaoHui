@@ -7,11 +7,11 @@
         android:id="@+id/ll_status"
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="wrap_content"></LinearLayout>
+        android:layout_height="124px"></LinearLayout>
 <TextView
     android:id="@+id/tv_1"
-    android:layout_width="94px"
-    android:layout_height="40px"
+    android:layout_width="188px"
+    android:layout_height="80px"
     android:text="销量"
     android:textColor="#121212"
     android:textSize="14px"
@@ -19,16 +19,20 @@
     android:layout_below="@id/ll_status"
     android:layout_marginTop="84px"
     android:layout_alignParentRight="true"
+    android:layout_marginRight="10dp"
+    android:background="#ffffff"
     />
     <TextView
         android:id="@+id/tv_2"
-        android:layout_width="94px"
-        android:layout_height="40px"
+        android:layout_width="188px"
+        android:layout_height="80px"
         android:text="价格"
         android:textColor="#121212"
         android:textSize="14px"
         android:gravity="center"
         android:layout_below="@id/tv_1"
         android:layout_alignParentRight="true"
+        android:background="#ffffff"
+        android:layout_marginRight="10dp"
         />
 </RelativeLayout>

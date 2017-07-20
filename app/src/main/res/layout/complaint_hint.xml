@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="540px"
+    android:layout_height="266px"
+    android:layout_centerInParent="true"
+    android:background="@drawable/shape_hintbg">
+    <TextView
+        android:id="@+id/tv_title_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提示"
+        android:textSize="36px"
+        android:textColor="#323232"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认投诉此商品？"
+        android:textSize="28px"
+        android:textColor="#323232"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_title_hint"
+        android:layout_marginTop="32px"/>
+    <ImageView
+        android:id="@+id/img_line_hint"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#cdcdcd"
+        android:layout_below="@id/tv_title_hint"
+        android:layout_marginTop="96px"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/img_line_hint"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_cancel_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="34px"
+            android:textColor="#40121212"/>
+        <ImageView
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#cdcdcd"/>
+        <TextView
+            android:id="@+id/tv_sure_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="确定"
+            android:gravity="center"
+            android:textSize="34px"
+            android:textColor="#ff0000"/>
+    </LinearLayout>
+</RelativeLayout>
+</RelativeLayout>

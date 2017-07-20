@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,41 +16,29 @@ import com.zhy.autolayout.utils.AutoUtils;
  * Created by jiaofeng on 2017/7/16.
  */
 
-public class PullListPop extends PopupWindow {
+public class ComplaintHintPop extends PopupWindow {
     private Context context;
     private View view;
-    private TextView tv1,tv2;
-    private LinearLayout mLayout;
+    private TextView mCancel,mSure;
 
+    public ComplaintHintPop(Context context, View.OnClickListener onClickListener){
+        this.view = LayoutInflater.from(context).inflate(R.layout.complaint_hint,null);
 
-    public PullListPop(Context context, View.OnClickListener onClickListener){
-
-        this.view = LayoutInflater.from(context).inflate(R.layout.list_pulldown,null);
-
-        tv1 = (TextView) view.findViewById(R.id.tv_1);
-        tv2 = (TextView) view.findViewById(R.id.tv_2);
-
-
-        tv1.setOnClickListener(onClickListener);
-        tv2.setOnClickListener(onClickListener);
+        mCancel = (TextView) view.findViewById(R.id.tv_cancel_hint);
+        mSure = (TextView) view.findViewById(R.id.tv_sure_hint);
 
         AutoUtils.autoSize(view);
+        mCancel.setOnClickListener(onClickListener);
+        mSure.setOnClickListener(onClickListener);
+
         this.setOutsideTouchable(false);
 
         this.setContentView(this.view);
         this.setHeight(RelativeLayout.LayoutParams.MATCH_PARENT);
         this.setWidth(RelativeLayout.LayoutParams.MATCH_PARENT);
-        this.setFocusable(true);
+        this.setFocusable(false);
         ColorDrawable drawable = new ColorDrawable(Color.parseColor("#99121212"));
         this.setBackgroundDrawable(drawable);
 
     }
-    /*public int getStatusBarHeight(){
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0){
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        return result;
-    }*/
 }
