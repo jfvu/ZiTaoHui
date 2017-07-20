@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jiaofeng.zitaohui.ui.activity.ApplyServeActivity">
+    tools:context="com.example.jiaofeng.zitaohui.ui.activity.ApplyServeActivity"
+    android:background="#F8F8F8">
 <LinearLayout
     android:id="@+id/ll_status_activity_applyserve"
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:layout_height="wrap_content"></LinearLayout>
     <RelativeLayout
+        android:id="@+id/rl_title_activity_applyserve"
         android:layout_width="match_parent"
         android:layout_height="44px"
         android:layout_below="@id/ll_status_activity_applyserve"
@@ -31,4 +33,95 @@
             android:layout_centerInParent="true"/>
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_class_activity_applyserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_activity_applyserve"
+        android:text="退款类型"
+        android:textColor="#FF5F3104"
+        android:textSize="12px"
+        android:layout_marginTop="8px"
+        android:layout_marginLeft="12px"/>
+    <RelativeLayout
+        android:id="@+id/rl_menony_applyserve"
+        android:layout_width="match_parent"
+        android:layout_height="36px"
+        android:layout_below="@id/tv_class_activity_applyserve"
+        android:layout_marginTop="8px"
+        android:background="#ffffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我要退款"
+            android:textColor="#FF121212"
+            android:textSize="14px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="（无需退货）"
+            android:textColor="#40000000"
+            android:textSize="14px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="69px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_thing_applyserve"
+        android:layout_width="match_parent"
+        android:layout_height="36px"
+        android:layout_below="@id/rl_menony_applyserve"
+        android:layout_marginTop="1px"
+        android:background="#ffffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我要退货"
+            android:textColor="#FF121212"
+            android:textSize="14px"
+            android:layout_marginLeft="12px"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_reason_applyserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_thing_applyserve"
+        android:layout_marginTop="8px"
+        android:layout_marginLeft="12px"
+        android:text="退款原因"
+        android:textColor="#FF5F3104"
+        android:textSize="12px"/>
+    <RelativeLayout
+        android:id="@+id/rl_selectreason_applyserve"
+        android:layout_width="match_parent"
+        android:layout_height="36px"
+        android:layout_below="@id/tv_reason_applyserve"
+        android:background="#ffffff"
+        android:layout_marginTop="8px">
+        <TextView
+            android:id="@+id/tv_showreason_applyserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请先选择退款类型"
+            android:textColor="#40000000"
+            android:textSize="14px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12px"/>
+        <ImageView
+            android:id="@+id/img_pull_applysreve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/applyserve_down"
+            android:layout_alignParentRight="true"
+            android:padding="12px"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/fl_applyserve"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_selectreason_applyserve"
+        ></FrameLayout>
 </RelativeLayout>

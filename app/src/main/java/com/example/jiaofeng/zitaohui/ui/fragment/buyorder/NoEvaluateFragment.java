@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.ApplyServeActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.EvaluateActivity;
 import com.example.jiaofeng.zitaohui.ui.fragment.BaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -85,6 +86,12 @@ public class NoEvaluateFragment extends BaseFragment {
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(getActivity(), EvaluateActivity.class));
+                }
+            });
+            holder.mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), ApplyServeActivity.class));
                 }
             });
 
