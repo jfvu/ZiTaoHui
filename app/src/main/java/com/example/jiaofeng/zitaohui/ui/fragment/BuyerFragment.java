@@ -80,6 +80,9 @@ public class BuyerFragment extends BaseFragment {
             case R.id.rl_message_fragment_buy:
                 break;
             case R.id.rl_indent_fragment_buy:
+                mIntent = new Intent(getActivity(), BuyOrderActivity.class);
+                mIntent.putExtra("BuyOrderActivity",0);
+                startActivity(mIntent);
                 break;
             case R.id.ll_take_fragment_buy:
                 mIntent = new Intent(getActivity(), BuyOrderActivity.class);

@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.SellOrderActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,6 +51,7 @@ public class SellerFragment extends BaseFragment {
     @BindView(R.id.rl_set_fragment_sell)
     RelativeLayout mRlSetFragmentSell;
     Unbinder unbinder;
+    private Intent mIntent;
 
     @Override
     protected int getLayoutId() {
@@ -89,16 +92,30 @@ public class SellerFragment extends BaseFragment {
             case R.id.rl_message_fragment_sell:
                 break;
             case R.id.rl_indent_fragment_sell:
+                mIntent = new Intent(getActivity(), SellOrderActivity.class);
+                mIntent.putExtra("SellOrderActivity",0);
+                startActivity(mIntent);
                 break;
             case R.id.ll_take_fragment_sell:
+                mIntent = new Intent(getActivity(), SellOrderActivity.class);
+                mIntent.putExtra("SellOrderActivity",4);
+                startActivity(mIntent);
                 break;
             case R.id.ll_send_fragment_sell:
+                mIntent = new Intent(getActivity(), SellOrderActivity.class);
+                mIntent.putExtra("SellOrderActivity",3);
+                startActivity(mIntent);
                 break;
             case R.id.ll_nopay_fragment_sell:
+                mIntent = new Intent(getActivity(), SellOrderActivity.class);
+                mIntent.putExtra("SellOrderActivity",2);
+                startActivity(mIntent);
                 break;
             case R.id.ll_aftersale_fragment_sell:
+
                 break;
             case R.id.ll_report_fragment_sell:
+
                 break;
             case R.id.rl_manage_fragment_sell:
                 break;

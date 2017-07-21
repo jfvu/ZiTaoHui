@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/rl_all_item_freeze"
+    android:layout_width="match_parent"
+    android:layout_height="48px"
+    android:background="#ffffff"
+    android:layout_marginTop="8px">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="冻结"
+        android:textColor="#e6121212"
+        android:textSize="14px"
+        android:layout_marginTop="5px"
+        android:layout_marginLeft="12px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017.06.01 07:12:00"
+        android:textColor="#40121212"
+        android:textSize="10px"
+        android:layout_marginLeft="12px"
+        android:layout_marginTop="29px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-15.00"
+        android:textColor="#40121212"
+        android:textSize="12px"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8px"
+        android:layout_marginRight="12px"/>
+</RelativeLayout>
+</RelativeLayout>
