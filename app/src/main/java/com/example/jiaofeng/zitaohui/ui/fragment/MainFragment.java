@@ -1,18 +1,17 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jiaofeng.zitaohui.R;
-
 import com.example.jiaofeng.zitaohui.adapter.MyFregmentAdapter2;
+import com.example.jiaofeng.zitaohui.ui.activity.SeachActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
@@ -65,5 +64,6 @@ public class MainFragment extends BaseFragment {
 
     @OnClick(R.id.img_seach_fragemnt_main)
     public void onViewClicked() {
+        startActivity(new Intent(getActivity(), SeachActivity.class));
     }
 }
