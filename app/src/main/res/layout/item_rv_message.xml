@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/rl_all_item_message"
+    android:layout_width="match_parent"
+    android:layout_height="48px"
+    android:background="#ffffff"
+    android:layout_marginTop="8px">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/message_head"
+        android:padding="10px"
+        android:layout_marginLeft="2px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="店铺名称"
+        android:textColor="#E6121212"
+        android:textSize="10px"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="53px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="欢迎来到XX店铺的紫陶汇"
+        android:textColor="#40121212"
+        android:textSize="8px"
+        android:layout_marginLeft="53px"
+        android:layout_marginTop="35px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="17/07/03"
+        android:textColor="#40121212"
+        android:textSize="8px"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10px"
+        android:layout_marginRight="12px"/>
+</RelativeLayout>
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.SellOrderActivity;
 
 import butterknife.BindView;
@@ -90,6 +91,8 @@ public class SellerFragment extends BaseFragment {
             case R.id.rl_account_fragment_sell:
                 break;
             case R.id.rl_message_fragment_sell:
+                mIntent = new Intent(getActivity(), MessageActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_indent_fragment_sell:
                 mIntent = new Intent(getActivity(), SellOrderActivity.class);

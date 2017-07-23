@@ -84,6 +84,7 @@ public class ComplaintActivity extends BaseActivity {
                 ShowPop();
                 break;
             case R.id.tv_record_activity_complaint:
+                startActivity(new Intent(ComplaintActivity.this,ComplainsRecordsActivity.class));
                 break;
         }
     }
@@ -96,7 +97,7 @@ public class ComplaintActivity extends BaseActivity {
                     break;
                 case R.id.tv_sure_hint:
                     mHintPop.dismiss();
-                    startActivity(new Intent(ComplaintActivity.this,ComplaintSucceActivity.class));
+                    startActivity(new Intent(ComplaintActivity.this,ComplaintsTypeActivity.class));
                     break;
 
             }

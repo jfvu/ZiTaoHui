@@ -46,6 +46,22 @@
         </activity>
         <activity android:name=".ui.activity.SeachActivity">
         </activity>
+        <activity android:name=".ui.activity.MessageActivity">
+        </activity>
+        <activity android:name=".ui.activity.SystemMessageActivity">
+        </activity>
+        <activity android:name=".ui.activity.CustomerServicesActivity">
+        </activity>
+        <activity android:name=".ui.activity.WithdrawsSucceeActivity">
+        </activity>
+        <activity android:name=".ui.activity.PaySafeActivity">
+        </activity>
+        <activity android:name=".ui.activity.ComplaintsTypeActivity">
+        </activity>
+        <activity android:name=".ui.activity.ComplainsRecordsActivity">
+        </activity>
+        <activity android:name=".ui.activity.ReturnScheduleActivity">
+        </activity>
     </application>
 
 </manifest>

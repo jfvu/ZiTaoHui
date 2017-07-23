@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.fragment.buyorder;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.ReturnScheduleActivity;
 import com.example.jiaofeng.zitaohui.ui.fragment.BaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -59,6 +61,12 @@ public class AfterSaleFragment extends BaseFragment {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+                }
+            });
+            holder.mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getActivity(), ReturnScheduleActivity.class));
                 }
             });
 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="39px"
+    android:layout_marginTop="1px"
+    android:background="#ffffff">
+<TextView
+    android:id="@+id/tv_flag_item_complainsrecords"
+    android:layout_width="33px"
+    android:layout_height="14px"
+    android:background="@drawable/shape_item_record"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="12px"
+    android:text="平台"
+    android:textColor="#FFFFFFFF"
+    android:gravity="center"
+    android:textSize="8px"
+    />
+    <ImageView
+        android:layout_width="4px"
+        android:layout_height="4px"
+        android:src="@drawable/shape_item_record1"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="53px"/>
+    <TextView
+        android:id="@+id/tv_content_item_complainsrecords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已核实，该投诉有误！"
+        android:textColor="#E6121212"
+        android:textSize="12px"
+        android:layout_marginTop="8px"
+        android:layout_marginLeft="65px"/>
+    <TextView
+        android:id="@+id/tv_time_item_complainsrecords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017-07-04 17:20"
+        android:textColor="#FF121212"
+        android:textSize="8px"
+        android:layout_marginLeft="65px"
+        android:layout_marginTop="27px"/>
+</RelativeLayout>

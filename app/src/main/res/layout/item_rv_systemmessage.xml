@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/rl_all_item_systemmessage"
+    android:layout_width="match_parent"
+    android:layout_height="88px"
+    android:background="#ffffff"
+    android:layout_marginTop="8px">
+    <ImageView
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:src="@drawable/systmenmessage_head"
+        android:paddingTop="8px"
+        android:paddingLeft="8px"
+        android:layout_marginLeft="2px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="系统客服"
+        android:textColor="#E6121212"
+        android:textSize="14px"
+        android:layout_marginTop="8px"
+        android:layout_marginLeft="53px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="07.05 12:30"
+        android:textColor="#40121212"
+        android:textSize="8px"
+        android:layout_marginLeft="53px"
+        android:layout_marginTop="33px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您投诉的『XXXXXX』 已有处理结果"
+        android:textColor="#66121212"
+        android:textSize="12px"
+        android:layout_marginLeft="53px"
+        android:layout_marginTop="49px"/>
+    <TextView
+        android:id="@+id/tv_check_item_systemmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check"
+        android:textColor="#FFFF0000"
+        android:textSize="10px"
+        android:layout_marginLeft="53px"
+        android:layout_marginTop="66px"
+        android:paddingBottom="8px"
+        />
+
+</RelativeLayout>
+</RelativeLayout>

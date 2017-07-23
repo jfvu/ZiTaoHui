@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.ui.activity.BuyOrderActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.ComplaintActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.CustomerServicesActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 
 import butterknife.BindView;
@@ -78,6 +80,8 @@ public class BuyerFragment extends BaseFragment {
             case R.id.rl_account_fragment_buy:
                 break;
             case R.id.rl_message_fragment_buy:
+                mIntent = new Intent(getActivity(), MessageActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_indent_fragment_buy:
                 mIntent = new Intent(getActivity(), BuyOrderActivity.class);
@@ -120,9 +124,12 @@ public class BuyerFragment extends BaseFragment {
             case R.id.ll_appreciate_fragment_buy:
                 break;
             case R.id.ll_school_fragment_buy:
+                mIntent = new Intent(getActivity(), ComplaintActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.ll_service_fragment_buy:
-                mIntent = new Intent(getActivity(), ComplaintActivity.class);
+                //mIntent = new Intent(getActivity(), ComplaintActivity.class);
+                mIntent = new Intent(getActivity(), CustomerServicesActivity.class);
                 startActivity(mIntent);
                 break;
         }

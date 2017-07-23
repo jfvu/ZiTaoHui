@@ -24,6 +24,7 @@
             android:src="@drawable/all_return"
             android:padding="12px"/>
         <TextView
+            android:id="@+id/tv_title_activity_complaintsuccee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17px"

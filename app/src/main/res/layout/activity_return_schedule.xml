@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiaofeng.zitaohui.ui.activity.ReturnScheduleActivity"
+    android:background="#ffffff">
+<LinearLayout
+    android:id="@+id/ll_status_activity_returnschedule"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_title_activity_returnschedule"
+        android:layout_width="match_parent"
+        android:layout_height="44px"
+        android:layout_below="@id/ll_status_activity_returnschedule"
+        android:background="#242424">
+        <ImageView
+            android:id="@+id/img_return_activity_returnschedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/all_return"
+            android:padding="12px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退货进度"
+            android:textColor="#FFFFFFFF"
+            android:textSize="17px"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40px"
+        android:background="#ffffff"
+        android:layout_below="@id/rl_title_activity_returnschedule"
+        android:layout_marginTop="8px">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="处理进程"
+            android:textColor="#FF5F3104"
+            android:textSize="12px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12px"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_activity_returnschedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_activity_returnschedule"
+        android:layout_marginTop="49px"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>
