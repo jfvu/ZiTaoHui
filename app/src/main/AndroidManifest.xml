@@ -62,6 +62,8 @@
         </activity>
         <activity android:name=".ui.activity.ReturnScheduleActivity">
         </activity>
+        <activity android:name=".ui.activity.OptimalStoreActivity">
+        </activity>
     </application>
 
 </manifest>

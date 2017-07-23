@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.MainActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.OptimalStoreActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,8 +73,10 @@ public class FindFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_delicacy_fragment_find:
+                startActivity(new Intent(getActivity(), MainActivity.class));
                 break;
             case R.id.rl_good_fragment_find:
+                startActivity(new Intent(getActivity(), OptimalStoreActivity.class));
                 break;
             case R.id.rl_bug_fragment_find:
                 break;
