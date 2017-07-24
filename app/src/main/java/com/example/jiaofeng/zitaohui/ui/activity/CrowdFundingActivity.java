@@ -2,6 +2,7 @@ package com.example.jiaofeng.zitaohui.ui.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -60,11 +61,12 @@ public class CrowdFundingActivity extends BaseActivity {
                             i = j;
                         }
                     }
-
-                    TextView textView = (TextView) mPop1.view.findViewById(R.id.rv_crowd1).findViewWithTag(i).findViewById(R.id.tv_item_crowd1);
-                    ImageView imageView = (ImageView) mPop1.view.findViewById(R.id.rv_crowd1).findViewWithTag(i).findViewById(R.id.img_yes_crowd1);
+                    RecyclerView view = (RecyclerView) mPop1.getContentView().findViewById(R.id.rv_crowd1);
+                    RecyclerView.LayoutManager layoutManager = view.getLayoutManager();
+                    TextView textView = (TextView) layoutManager.getChildAt(i).findViewById(R.id.tv_item_crowd1);
+                    //ImageView imageView = (ImageView) mPop1.view.findViewById(R.id.rv_crowd1).findViewWithTag(i).findViewById(R.id.img_yes_crowd1);
                     textView.setTextColor(Color.parseColor("#242424"));
-                    imageView.setVisibility(View.VISIBLE);
+                    //imageView.setVisibility(View.VISIBLE);
                 }else {
                     if (mPop1.isShowing()){
                         mPop1.dismiss();
