@@ -64,6 +64,8 @@
         </activity>
         <activity android:name=".ui.activity.OptimalStoreActivity">
         </activity>
+        <activity android:name=".ui.activity.CrowdFundingActivity">
+        </activity>
     </application>
 
 </manifest>
