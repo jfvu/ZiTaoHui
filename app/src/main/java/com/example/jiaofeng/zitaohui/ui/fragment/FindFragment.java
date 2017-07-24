@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.CrowdFundingActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MainActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.OptimalStoreActivity;
 
@@ -81,6 +82,7 @@ public class FindFragment extends BaseFragment {
             case R.id.rl_bug_fragment_find:
                 break;
             case R.id.rl_crowd_fragment_find:
+                startActivity(new Intent(getActivity(), CrowdFundingActivity.class));
                 break;
         }
     }
