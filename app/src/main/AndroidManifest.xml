@@ -16,13 +16,14 @@
             android:name="design_height"
             android:value="667"/>
 
-        <activity android:name=".ui.activity.MainActivity">
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.ShareActivity"/>
         <activity android:name=".ui.activity.OneOfClassActivity">
         </activity>
@@ -65,6 +66,14 @@
         <activity android:name=".ui.activity.OptimalStoreActivity">
         </activity>
         <activity android:name=".ui.activity.CrowdFundingActivity">
+        </activity>
+        <activity android:name=".ui.activity.FasterLoginActivity">
+        </activity>
+        <activity android:name=".ui.activity.RegisterActivity">
+        </activity>
+        <activity android:name=".ui.activity.ForgetPasswordActivity">
+        </activity>
+        <activity android:name=".ui.activity.PickerActivity">
         </activity>
     </application>
 
