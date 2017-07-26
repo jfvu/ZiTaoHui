@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_title_fragment_this"
+        android:layout_width="match_parent"
+        android:layout_height="48px"
+        android:background="#ffffff"
+        >
+        <TextView
+            android:id="@+id/tv_shoutime_activity_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本场更新还剩 04:57:32"
+            android:textColor="#E6121212"
+            android:textSize="14px"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#26121212"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36px"
+            android:layout_toLeftOf="@id/tv_shoutime_activity_picker"
+            android:layout_marginRight="5px"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#26121212"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5px"
+            android:layout_toRightOf="@id/tv_shoutime_activity_picker"
+            android:layout_marginRight="36px"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_fragment_this"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_fragment_this">
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

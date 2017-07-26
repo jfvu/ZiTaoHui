@@ -12,6 +12,7 @@ import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.ui.activity.CrowdFundingActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MainActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.OptimalStoreActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.PickerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,6 +81,7 @@ public class FindFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), OptimalStoreActivity.class));
                 break;
             case R.id.rl_bug_fragment_find:
+                startActivity(new Intent(getActivity(), PickerActivity.class));
                 break;
             case R.id.rl_crowd_fragment_find:
                 startActivity(new Intent(getActivity(), CrowdFundingActivity.class));
