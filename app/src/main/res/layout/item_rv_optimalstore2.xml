@@ -22,6 +22,7 @@
         android:layout_marginTop="20px"
         android:layout_marginLeft="57px"/>
     <Button
+        android:id="@+id/btn_into_item_2"
         android:layout_width="48px"
         android:layout_height="20px"
         android:background="@drawable/shape_optimalstore_btn"

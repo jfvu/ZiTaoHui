@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+<RelativeLayout
+    android:id="@+id/rl_title_fragment_shopmain"
+    android:layout_width="match_parent"
+    android:layout_height="40px"
+    android:background="#ffffff"
+    android:layout_marginTop="8px">
+<ImageView
+    android:layout_width="20px"
+    android:layout_height="20px"
+    android:src="@drawable/shop_today"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="12px"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今日拍品"
+        android:textColor="#E6121212"
+        android:textSize="12px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="35px"/>
+</RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_fragment_shopmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title_fragment_shopmain">
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="144px"
+        android:layout_alignParentBottom="true">
+        <RelativeLayout
+            android:id="@+id/rl_location_fragment_shopmain"
+            android:layout_width="match_parent"
+            android:layout_height="40px"
+            android:background="#ffffff">
+            <ImageView
+                android:layout_width="20px"
+                android:layout_height="20px"
+                android:src="@drawable/shop_location"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="位置详情"
+                android:textColor="#E6121212"
+                android:textSize="12px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35px"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="104px"
+            android:background="@drawable/shop_map"
+            android:layout_below="@id/rl_location_fragment_shopmain"/>
+        <ImageView
+            android:layout_width="9.6px"
+            android:layout_height="9.3px"
+            android:src="@drawable/shop_lc"
+            android:layout_below="@id/rl_location_fragment_shopmain"
+            android:layout_marginTop="56.2px"
+            android:layout_marginLeft="202.2px"/>
+        <TextView
+            android:layout_width="29px"
+            android:layout_height="24px"
+            android:background="@drawable/shop_pop"
+            android:layout_below="@id/rl_location_fragment_shopmain"
+            android:layout_marginTop="41px"
+            android:layout_marginLeft="210px"
+            android:text="地址地址地址"
+            android:textColor="#FF121212"
+            android:textSize="3px"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+
+</RelativeLayout>

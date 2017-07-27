@@ -1,23 +1,22 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OptimalStoreActivity extends BaseActivity {
@@ -89,11 +88,23 @@ public class OptimalStoreActivity extends BaseActivity {
                         Toast.makeText(OptimalStoreActivity.this, ""+position, Toast.LENGTH_SHORT).show();
                     }
                 });
+                holder.mButton1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(OptimalStoreActivity.this,ShopActivity.class));
+                    }
+                });
             }else {
                 holder.mView2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(OptimalStoreActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                holder.mButton2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(OptimalStoreActivity.this,ShopActivity.class));
                     }
                 });
             }
@@ -118,13 +129,15 @@ public class OptimalStoreActivity extends BaseActivity {
 
         class ViewHolder extends RecyclerView.ViewHolder {
             private RelativeLayout mView1,mView2;
+            private Button mButton1,mButton2;
 
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 mView1 = (RelativeLayout) itemView.findViewById(R.id.rl_item_1);
                 mView2 = (RelativeLayout) itemView.findViewById(R.id.rl_item_2);
-
+                mButton1 = (Button) itemView.findViewById(R.id.btn_into_item_1);
+                mButton2 = (Button) itemView.findViewById(R.id.btn_into_item_2);
             }
         }
     }
