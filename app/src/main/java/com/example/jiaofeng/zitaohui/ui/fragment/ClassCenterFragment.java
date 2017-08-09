@@ -33,6 +33,10 @@ public class ClassCenterFragment extends BaseFragment {
     private List<Entityclass> entityclasses = new ArrayList<>();
     private Intent mIntent;
 
+    public ClassCenterFragment() {
+
+    }
+
     public ClassCenterFragment(int anInt) {
         mInt = anInt;
     }

@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.ui.fragment.BaseFragment;
 import com.zhy.autolayout.utils.AutoUtils;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

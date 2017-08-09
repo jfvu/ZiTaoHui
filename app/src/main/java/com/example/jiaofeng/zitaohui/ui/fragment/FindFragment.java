@@ -41,6 +41,7 @@ public class FindFragment extends BaseFragment {
     @BindView(R.id.rl_crowd_fragment_find)
     RelativeLayout rlCrowdFragmentFind;
     Unbinder unbinder;
+    private Intent mIntent;
 
     @Override
     protected int getLayoutId() {
@@ -75,6 +76,7 @@ public class FindFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_delicacy_fragment_find:
+                mIntent = new Intent();
                 startActivity(new Intent(getActivity(), MainActivity.class));
                 break;
             case R.id.rl_good_fragment_find:
