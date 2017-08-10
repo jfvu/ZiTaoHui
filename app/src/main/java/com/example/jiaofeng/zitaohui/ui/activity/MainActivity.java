@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.vp_activity_main)
     ViewPager vpActivityMain;
     private MyFregmentAdapter myFregmentAdapter;
+    private Intent mIntent;
 
     @Override
     protected void initData() {
@@ -44,6 +46,10 @@ public class MainActivity extends BaseActivity {
         tlActivityMain.setTabGravity(TabLayout.GRAVITY_FILL);
         vpActivityMain.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tlActivityMain));
         tlActivityMain.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(vpActivityMain));
+       /* mIntent = getIntent();
+        if (mIntent.getIntExtra("MainActivity",0)==4){
+            vpActivityMain.setCurrentItem(0);
+        }*/
     }
 
     @Override

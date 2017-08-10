@@ -1,7 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
@@ -16,7 +15,6 @@ import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.utils.CrowdPop1;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CrowdFundingActivity extends BaseActivity {
@@ -112,12 +110,6 @@ public class CrowdFundingActivity extends BaseActivity {
         finish();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
     private CrowdPop1.OnItemClickListener onClickListener = new CrowdPop1.OnItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {

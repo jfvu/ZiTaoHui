@@ -30,6 +30,7 @@ public class MainFragment extends BaseFragment {
     ViewPager vpFragmentMain;
     Unbinder unbinder;
     private MyFregmentAdapter2 myFregmentAdapter2;
+    private Intent mIntent;
 
     @Override
     protected int getLayoutId() {
@@ -46,7 +47,6 @@ public class MainFragment extends BaseFragment {
         myFregmentAdapter2 = new MyFregmentAdapter2(getChildFragmentManager(),getActivity());
         vpFragmentMain.setAdapter(myFregmentAdapter2);
         tlFragmentMain.setupWithViewPager(vpFragmentMain);
-
         tlFragmentMain.getTabAt(0).setText("活动");
         tlFragmentMain.getTabAt(1).setText("关注");
         tlFragmentMain.getTabAt(2).setText("专场拍");
@@ -56,7 +56,9 @@ public class MainFragment extends BaseFragment {
         vpFragmentMain.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tlFragmentMain));
         tlFragmentMain.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(vpFragmentMain));
 
-
+      /*  mIntent = getActivity().getIntent();
+        int i = mIntent.getIntExtra("MainActivity",0);
+        vpFragmentMain.setCurrentItem(i);*/
     }
 
 
@@ -65,5 +67,13 @@ public class MainFragment extends BaseFragment {
     @OnClick(R.id.img_seach_fragemnt_main)
     public void onViewClicked() {
         startActivity(new Intent(getActivity(), SeachActivity.class));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (FindFragment.flag == 4){
+            vpFragmentMain.setCurrentItem(4);
+        }
     }
 }
