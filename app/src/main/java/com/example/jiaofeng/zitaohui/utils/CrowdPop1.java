@@ -17,7 +17,6 @@ import com.example.jiaofeng.zitaohui.R;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by jiaofeng on 2017/7/16.
@@ -26,71 +25,47 @@ import java.util.List;
 public class CrowdPop1 extends PopupWindow {
     RecyclerView mRvRightMenu;
     private Context context;
-    public static List<String> mList;
-    public View view;
-    public static MenuAdapter adapter;
-    public OnItemClickListener mOnItemClickListener;
-    public interface OnItemClickListener extends MenuAdapter.OnItemClickListener {
-        void onItemClick(View view,int position);
-    }
+    private ArrayList<String> mList;
+    private View view;
+    private View.OnClickListener mOnClickListener;
+    private int i;
 
-    public CrowdPop1(Context context,OnItemClickListener mOnItemClickListener) {
+
+    public CrowdPop1(Context context, View.OnClickListener onClickListener,ArrayList<String> mList,int i) {
         this.context = context;
-        this.mOnItemClickListener = mOnItemClickListener;
+        this.mOnClickListener = onClickListener;
         this.view = LayoutInflater.from(context).inflate(R.layout.crowd1, null);
+        this.mList = mList;
+        this.i = i;
         mRvRightMenu = (RecyclerView) view.findViewById(R.id.rv_crowd1);
-        mList = new ArrayList<>();
-        mList.add("综合推荐");
-        mList.add("最新上线");
-        mList.add("金额最多");
-        mList.add("支持最多");
-        mList.add("即将结束");
-        mList.add("即将开始");
-
-
+        mRvRightMenu.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        mRvRightMenu.setAdapter(new MyAdapter());
 
 
 
         this.setOutsideTouchable(false);
 
         this.setContentView(this.view);
-        this.setHeight(RelativeLayout.LayoutParams.MATCH_PARENT);
+        this.setHeight(RelativeLayout.LayoutParams.WRAP_CONTENT);
         this.setWidth(RelativeLayout.LayoutParams.MATCH_PARENT);
         this.setFocusable(true);
         ColorDrawable drawable = new ColorDrawable(Color.parseColor("#99121212"));
         this.setBackgroundDrawable(drawable);
-        adapter = new MenuAdapter(mList,view);
 
-        mRvRightMenu.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false));
-        mRvRightMenu.setAdapter(adapter);
-        //adapter.setOnItemClickListener(mOnItemClickListener);
-        adapter.setOnItemClickListener(mOnItemClickListener);
+
     }
 
 
 
-     static class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
-        private List<String> mList;
+     /*static class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
+        private ArrayList<String> mList;
         private View mView;
-         private OnItemClickListener mOnItemClickListener1;
 
-
-
-         public interface OnItemClickListener{
-             void onItemClick(View view,int position);
-         }
-         public void setOnItemClickListener(OnItemClickListener mOnItemClickListener){
-             this.mOnItemClickListener1 = mOnItemClickListener;
+         public MenuAdapter(ArrayList<String> list) {
+             mList = list;
          }
 
-        public MenuAdapter(List<String> list, View view) {
-            mList = list;
-            mView = view;
-            //mOnItemClickListener = onItemClickListener;
-        }
-
-
-        @Override
+         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view1 = LayoutInflater.from(mView.getContext()).inflate(R.layout.item_crowd1, parent, false);
             AutoUtils.autoSize(view1);
@@ -104,14 +79,8 @@ public class CrowdPop1 extends PopupWindow {
           holder.mView.setText(mList.get(position));
             //holder.mView.setTag(position);
             holder.mView1.setVisibility(View.GONE);
-            if (mOnItemClickListener1 != null){
-                holder.mLayout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int position = holder.getLayoutPosition();
-                        mOnItemClickListener1.onItemClick(holder.itemView,position);
-                    }
-                });
+            if (mOnClickListener != null){
+                holder.mLayout.setOnClickListener(mOnClickListener);
             }
 
         }
@@ -136,6 +105,48 @@ public class CrowdPop1 extends PopupWindow {
 
             }
         }
-    }
+    }*/
 
+
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view1 = LayoutInflater.from(view.getContext()).inflate(R.layout.item_crowd1, parent, false);
+            AutoUtils.autoSize(view1);
+            return new ViewHolder(view1);
+        }
+
+        @Override
+        public void onBindViewHolder(ViewHolder holder, final int position) {
+            holder.mView.setText(mList.get(position));
+            holder.mLayout.setTag(position);
+
+            if (position == i){
+                holder.mView1.setVisibility(View.VISIBLE);
+                holder.mView.setTextColor(Color.parseColor("#242424"));
+            }
+            holder.mLayout.setOnClickListener(mOnClickListener);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return mList.size();
+        }
+
+        class ViewHolder extends RecyclerView.ViewHolder {
+            private TextView mView;
+            private ImageView mView1;
+            private RelativeLayout mLayout;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                mView = (TextView) itemView.findViewById(R.id.tv_item_crowd1);
+                mView1 = (ImageView) itemView.findViewById(R.id.img_yes_crowd1);
+                mLayout = (RelativeLayout) itemView.findViewById(R.id.rl_crowd1);
+
+            }
+        }
+    }
 }

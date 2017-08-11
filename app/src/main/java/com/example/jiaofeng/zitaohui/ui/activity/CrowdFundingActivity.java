@@ -1,18 +1,28 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.utils.CrowdPop1;
+import com.example.jiaofeng.zitaohui.utils.CrowdPop3;
+import com.zhy.autolayout.utils.AutoUtils;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,59 +34,57 @@ public class CrowdFundingActivity extends BaseActivity {
     LinearLayout mLlStatusActivityCrowdfunding;
     @BindView(R.id.img_return_activity_crowdfunding)
     ImageView mImgReturnActivityCrowdfunding;
-    @BindView(R.id.rb_1_activity_crowdfunding)
-    CheckBox mRb1ActivityCrowdfunding;
-    @BindView(R.id.rb_2_activity_crowdfunding)
-    CheckBox mRb2ActivityCrowdfunding;
-    @BindView(R.id.fl_activity_crowdfunding)
-    FrameLayout mFlActivityCrowdfunding;
+    @BindView(R.id.rv_activity_crowdfunding)
+    RecyclerView mFlActivityCrowdfunding;
     @BindView(R.id.ll_activity_crowdfunding)
-    LinearLayout mLlActivityCrowdfunding;
+    RadioGroup mLlActivityCrowdfunding;
+    @BindView(R.id.rb_1_activity_crowdfunding)
+    RadioButton mRb1ActivityCrowdfunding;
+    @BindView(R.id.rb_2_activity_crowdfunding)
+    RadioButton mRb2ActivityCrowdfunding;
     private boolean flag1 = false;
-    private boolean flag2 = false;
+
     private CrowdPop1 mPop1;
+    private CrowdPop3 mPop3;
+    private ArrayList<String> mList,mList1;
+    private WindowManager.LayoutParams lp;
+    private Window window;
+    private boolean flag = false;
 
     @Override
     protected void initData() {
+
 
         mRb1ActivityCrowdfunding.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    mRb2ActivityCrowdfunding.setChecked(!isChecked);
-                    if (mPop1 == null){
-                    mPop1 = new CrowdPop1(CrowdFundingActivity.this, onClickListener);}
-                    mPop1.showAsDropDown(mLlActivityCrowdfunding);
-                    mPop1.setOnDismissListener(new PopupWindow.OnDismissListener() {
-                        @Override
-                        public void onDismiss() {
-                            mRb1ActivityCrowdfunding.setChecked(false);
-                        }
-                    });
-                    int i = 0;
-                    for (int j = 0; j < CrowdPop1.mList.size(); j++) {
-                       if( mRb1ActivityCrowdfunding.getText().toString().equals(CrowdPop1.mList.get(j))){
-                            i = j;
-                        }
-                    }
-                    RecyclerView view = (RecyclerView) mPop1.getContentView().findViewById(R.id.rv_crowd1);
-                    RecyclerView.LayoutManager layoutManager = view.getLayoutManager();
-                    TextView textView = (TextView) layoutManager.getChildAt(i).findViewById(R.id.tv_item_crowd1);
-                    //ImageView imageView = (ImageView) mPop1.view.findViewById(R.id.rv_crowd1).findViewWithTag(i).findViewById(R.id.img_yes_crowd1);
-                    textView.setTextColor(Color.parseColor("#242424"));
-                    //imageView.setVisibility(View.VISIBLE);
-                }else {
-                    if (mPop1.isShowing()){
-                        mPop1.dismiss();
-                    }
+                    flag = true;
                 }
             }
         });
+        mRb1ActivityCrowdfunding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRb1ActivityCrowdfunding.isChecked() && flag) {
+                    openPop();
+                }
+            }
+        });
+
         mRb2ActivityCrowdfunding.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    mRb1ActivityCrowdfunding.setChecked(!isChecked);
+                    flag1 = true;
+                }
+            }
+        });
+        mRb2ActivityCrowdfunding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRb2ActivityCrowdfunding.isChecked() && flag1) {
+                    openPop1();
                 }
             }
         });
@@ -85,8 +93,28 @@ public class CrowdFundingActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mRb1ActivityCrowdfunding.setChecked(flag1);
-        mRb2ActivityCrowdfunding.setChecked(flag2);
+        mList = new ArrayList<>();
+        mList.add("综合推荐");
+        mList.add("最新上线");
+        mList.add("金额最多");
+        mList.add("支持最多");
+        mList.add("即将结束");
+        mList.add("即将开始");
+        mRb1ActivityCrowdfunding.setChecked(true);
+        flag = true;
+        flag1 = true;
+        mList1 = new ArrayList<>();
+        mList1.add("全部类别");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mList1.add("分类分类");
+        mFlActivityCrowdfunding.setLayoutManager(new LinearLayoutManager(this));
+        mFlActivityCrowdfunding.setAdapter(new MyAdapter());
     }
 
     @Override
@@ -110,7 +138,7 @@ public class CrowdFundingActivity extends BaseActivity {
         finish();
     }
 
-    private CrowdPop1.OnItemClickListener onClickListener = new CrowdPop1.OnItemClickListener() {
+    /*private CrowdPop1.OnItemClickListener onClickListener = new CrowdPop1.OnItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
             //TextView textView = (TextView) view.findViewWithTag(position);
@@ -119,5 +147,129 @@ public class CrowdFundingActivity extends BaseActivity {
             mRb1ActivityCrowdfunding.setText(textView1.getText().toString());
             mPop1.dismiss();
         }
+    };*/
+    private void openPop() {
+        int j = 0;
+        for (int i = 0; i < mList.size(); i++) {
+            if (mRb1ActivityCrowdfunding.getText().equals(mList.get(i))){
+                j = i;
+            }
+        }
+
+        mPop1 = new CrowdPop1(this, onClickListener, mList,j);
+        window = this.getWindow();
+        lp = this.getWindow()
+                .getAttributes();
+        lp.alpha = 0.4f;
+        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        this.getWindow().setAttributes(lp);
+        mPop1.setTouchable(true);
+        mPop1.setFocusable(true);
+        mPop1.setBackgroundDrawable(new BitmapDrawable());
+        mPop1.setOutsideTouchable(true);
+
+
+
+        mPop1.showAsDropDown(mLlActivityCrowdfunding);
+        mPop1.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+            // 在dismiss中恢复透明度
+            public void onDismiss() {
+
+                lp.alpha = 1f;
+                window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                window.setAttributes(lp);
+            }
+        });
+    }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.rl_crowd1:
+                    mPop1.dismiss();
+                    mRb1ActivityCrowdfunding.setText(mList.get((Integer) v.getTag()));
+
+            }
+        }
     };
+
+    private void openPop1() {
+        int j = 0;
+        for (int i = 0; i < mList.size(); i++) {
+            if (mRb2ActivityCrowdfunding.getText().equals(mList1.get(i))){
+                j = i;
+            }
+        }
+
+        mPop3 = new CrowdPop3(this, onClickListener1, mList1,j);
+        window = this.getWindow();
+        lp = this.getWindow()
+                .getAttributes();
+        lp.alpha = 0.4f;
+        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        this.getWindow().setAttributes(lp);
+        mPop3.setTouchable(true);
+        mPop3.setFocusable(true);
+        mPop3.setBackgroundDrawable(new BitmapDrawable());
+        mPop3.setOutsideTouchable(true);
+
+
+
+        mPop3.showAsDropDown(mLlActivityCrowdfunding);
+        mPop3.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+            // 在dismiss中恢复透明度
+            public void onDismiss() {
+
+                lp.alpha = 1f;
+                window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                window.setAttributes(lp);
+            }
+        });
+    }
+
+    private View.OnClickListener onClickListener1 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.cb_pop:
+                    mPop3.dismiss();
+                    mRb2ActivityCrowdfunding.setText(mList1.get((Integer) v.getTag()));
+
+            }
+        }
+    };
+
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view1 = LayoutInflater.from(CrowdFundingActivity.this).inflate(R.layout.item_crowd3, parent, false);
+            AutoUtils.autoSize(view1);
+            return new ViewHolder(view1);
+        }
+
+        @Override
+        public void onBindViewHolder(ViewHolder holder, final int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 8;
+        }
+
+        class ViewHolder extends RecyclerView.ViewHolder {
+            private CheckBox mBox;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                mBox = (CheckBox) itemView.findViewById(R.id.cb_pop);
+
+
+            }
+        }
+    }
 }
