@@ -51,23 +51,74 @@
                 android:textSize="12px"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_normal_item_rv_crowdfunding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
                 <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                    android:id="@+id/pb_crowdfunding"
                     android:layout_width="180px"
                     android:layout_height="3px"
                     app:rcProgress="76"
                     app:rcMax="100"
                     app:rcRadius="100px"
                     app:rcBackgroundPadding="0px"
-                    app:rcReverse="true"
+                    app:rcReverse="false"
                     app:rcProgressColor="#FF0000"
                     app:rcBackgroundColor="#D8D8D8"></com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="76%"
+                    android:textColor="#FFFF0000"
+                    android:textSize="9px"
+                    android:layout_marginLeft="12px"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5px">
+<ImageView
+    android:layout_width="10px"
+    android:layout_height="10px"
+    android:src="@drawable/crowdfunding_time"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1544人"
+                    android:textColor="#40121212"
+                    android:textSize="10px"
+                    android:layout_marginLeft="3px"/>
+                <ImageView
+                    android:layout_width="10px"
+                    android:layout_height="10px"
+                    android:src="@drawable/crowdfunding_time"
+                    android:layout_marginLeft="51px"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31.08万元"
+                    android:textColor="#40121212"
+                    android:textSize="10px"
+                    android:layout_marginLeft="3px"/>
+                <ImageView
+                    android:layout_width="10px"
+                    android:layout_height="10px"
+                    android:src="@drawable/crowdfunding_time"
+                    android:layout_marginLeft="51px"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3px"
+                    android:text="26天"
+                    android:textColor="#40121212"
+                    android:textSize="10px"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

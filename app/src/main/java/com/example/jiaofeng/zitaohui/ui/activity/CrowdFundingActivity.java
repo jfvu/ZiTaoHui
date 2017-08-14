@@ -50,6 +50,8 @@ public class CrowdFundingActivity extends BaseActivity {
     private WindowManager.LayoutParams lp;
     private Window window;
     private boolean flag = false;
+    private boolean soon;
+    private MyAdapter mAdapter;
 
     @Override
     protected void initData() {
@@ -93,6 +95,7 @@ public class CrowdFundingActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        soon = true;
         mList = new ArrayList<>();
         mList.add("综合推荐");
         mList.add("最新上线");
@@ -114,7 +117,8 @@ public class CrowdFundingActivity extends BaseActivity {
         mList1.add("分类分类");
         mList1.add("分类分类");
         mFlActivityCrowdfunding.setLayoutManager(new LinearLayoutManager(this));
-        mFlActivityCrowdfunding.setAdapter(new MyAdapter());
+        mAdapter = new MyAdapter(soon);
+        mFlActivityCrowdfunding.setAdapter(mAdapter);
     }
 
     @Override
@@ -190,6 +194,14 @@ public class CrowdFundingActivity extends BaseActivity {
                 case R.id.rl_crowd1:
                     mPop1.dismiss();
                     mRb1ActivityCrowdfunding.setText(mList.get((Integer) v.getTag()));
+                    if ((Integer)v.getTag()==4){
+                        soon = false;
+                        mAdapter.notifyDataSetChanged();
+
+                    }else {
+                        soon = true;
+                        mAdapter.notifyDataSetChanged();
+                    }
 
             }
         }
@@ -243,16 +255,28 @@ public class CrowdFundingActivity extends BaseActivity {
     };
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+        private boolean flag;
+
+        public MyAdapter(boolean flag) {
+            this.flag = flag;
+        }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view1 = LayoutInflater.from(CrowdFundingActivity.this).inflate(R.layout.item_crowd3, parent, false);
+            View view1 = LayoutInflater.from(CrowdFundingActivity.this).inflate(R.layout.item_rv_crowdfunding, parent, false);
             AutoUtils.autoSize(view1);
             return new ViewHolder(view1);
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
+            if (flag){
+                holder.mLayout1.setVisibility(View.VISIBLE);
+                holder.mLayout2.setVisibility(View.GONE);
+            }else {
+                holder.mLayout2.setVisibility(View.VISIBLE);
+                holder.mLayout1.setVisibility(View.GONE);
+            }
 
         }
 
@@ -262,11 +286,12 @@ public class CrowdFundingActivity extends BaseActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            private CheckBox mBox;
+            private LinearLayout mLayout1,mLayout2;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                mBox = (CheckBox) itemView.findViewById(R.id.cb_pop);
+                mLayout1 = (LinearLayout) itemView.findViewById(R.id.ll_soon_item_rv_crowdfunding);
+                mLayout2 = (LinearLayout) itemView.findViewById(R.id.ll_normal_item_rv_crowdfunding);
 
 
             }
