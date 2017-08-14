@@ -13,15 +13,12 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * Created by jiaofeng on 2017/7/16.
@@ -32,11 +29,13 @@ public class HistoryPop extends PopupWindow {
     private Context context;
     private List<Entity> mList;
     public View view;
+    private View.OnClickListener mClickListener;
 
 
-    public HistoryPop(Context context) {
+    public HistoryPop(Context context,View.OnClickListener onClickListener) {
         this.context = context;
         this.view = LayoutInflater.from(context).inflate(R.layout.right_menu, null);
+        this.mClickListener = onClickListener;
         mRvRightMenu = (RecyclerView) view.findViewById(R.id.rv_right_menu);
         mList = new ArrayList<>();
         Entity entity = new Entity(R.drawable.item_menu_img,"内容内容内容内容内容内容内容","￥：4000起");
@@ -98,18 +97,8 @@ public class HistoryPop extends PopupWindow {
             holder.mView.setImageResource(mList.get(position).getImg());
             holder.mView1.setText(mList.get(position).getContent());
             holder.mView2.setText(mList.get(position).getPrice());
-            holder.mButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "找相似", Toast.LENGTH_SHORT).show();
-                }
-            });
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
-                }
-            });
+            holder.mButton.setOnClickListener(mClickListener);
+            //holder.mView.setOnClickListener(mClickListener);
 
         }
 

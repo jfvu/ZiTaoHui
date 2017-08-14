@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ public class AddAddressActivity extends BaseActivity {
     ImageView mImgReturnActivityAddaddress;
     @BindView(R.id.tv_send_activity_addaddress)
     TextView mTvSendActivityAddaddress;
+    private Intent mIntent;
 
     @Override
     protected void initData() {
@@ -28,7 +30,9 @@ public class AddAddressActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        mIntent = getIntent();
+        String tv = mIntent.getStringExtra("AddAddressActivity");
+        mTvSendActivityAddaddress.setText(tv);
     }
 
     @Override

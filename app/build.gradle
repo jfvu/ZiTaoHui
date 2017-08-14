@@ -34,6 +34,6 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
     compile 'q.rorbin:VerticalTabLayout:1.2.4'
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
-    testCompile 'junit:junit:4.12'
     compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+    testCompile 'junit:junit:4.12'
 }

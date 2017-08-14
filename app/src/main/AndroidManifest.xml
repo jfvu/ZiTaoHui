@@ -3,10 +3,10 @@
           package="com.example.jiaofeng.zitaohui">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -77,6 +77,16 @@
         <activity android:name=".ui.activity.PickerActivity">
         </activity>
         <activity android:name=".ui.activity.ShopActivity">
+        </activity>
+        <activity android:name=".ui.activity.SimilarActivity">
+        </activity>
+        <activity android:name=".ui.activity.CustomizeActivity">
+        </activity>
+        <activity android:name=".ui.activity.CustomizeSetActivity">
+        </activity>
+        <activity android:name=".ui.activity.AddressActivity">
+        </activity>
+        <activity android:name=".ui.activity.SpeciallyActivity">
         </activity>
     </application>
 

@@ -1,5 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -35,6 +36,7 @@ public class ShopActivity extends BaseActivity {
     @BindView(R.id.ll_server_activity_shop)
     LinearLayout mLlServerActivityShop;
     private MyFregmentAdapter7 mMyFregmentAdapter7;
+    private Intent mIntent;
 
     @Override
     protected void initData() {
@@ -85,10 +87,28 @@ public class ShopActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.ll_main_activity_shop:
+                mIntent = new Intent();
+                mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                mIntent.setClass(ShopActivity.this, MainActivity.class);
+                mIntent.putExtra("MainActivity",0);
+                startActivity(mIntent);
                 break;
             case R.id.ll_find_activity_shop:
+                mIntent = new Intent();
+                mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                mIntent.setClass(ShopActivity.this, MainActivity.class);
+                mIntent.putExtra("MainActivity",2);
+                startActivity(mIntent);
                 break;
             case R.id.ll_my_activity_shop:
+                mIntent = new Intent();
+                mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                mIntent.setClass(ShopActivity.this, MainActivity.class);
+                mIntent.putExtra("MainActivity",3);
+                startActivity(mIntent);
                 break;
             case R.id.ll_server_activity_shop:
                 break;

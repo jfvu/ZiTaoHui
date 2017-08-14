@@ -6,7 +6,7 @@
 <RelativeLayout
     android:id="@+id/rl_fragment_delicaay"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="220px"
     android:background="@drawable/delicacy_img"
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"

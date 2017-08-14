@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.utils.CrowdPop1;
@@ -142,16 +142,7 @@ public class CrowdFundingActivity extends BaseActivity {
         finish();
     }
 
-    /*private CrowdPop1.OnItemClickListener onClickListener = new CrowdPop1.OnItemClickListener() {
-        @Override
-        public void onItemClick(View view, int position) {
-            //TextView textView = (TextView) view.findViewWithTag(position);
-            TextView textView1 = (TextView) view.findViewById(R.id.tv_item_crowd1);
 
-            mRb1ActivityCrowdfunding.setText(textView1.getText().toString());
-            mPop1.dismiss();
-        }
-    };*/
     private void openPop() {
         int j = 0;
         for (int i = 0; i < mList.size(); i++) {
@@ -194,13 +185,20 @@ public class CrowdFundingActivity extends BaseActivity {
                 case R.id.rl_crowd1:
                     mPop1.dismiss();
                     mRb1ActivityCrowdfunding.setText(mList.get((Integer) v.getTag()));
-                    if ((Integer)v.getTag()==4){
+                    Toast.makeText(CrowdFundingActivity.this, ""+v.getTag(), Toast.LENGTH_SHORT).show();
+                    if ((Integer)v.getTag()==5){
                         soon = false;
-                        mAdapter.notifyDataSetChanged();
+                        //mAdapter.notifyDataSetChanged();
+                        mAdapter = null;
+                        mAdapter = new MyAdapter(soon);
+                        mFlActivityCrowdfunding.setAdapter(mAdapter);
 
                     }else {
                         soon = true;
-                        mAdapter.notifyDataSetChanged();
+                        //mAdapter.notifyDataSetChanged();
+                        mAdapter = null;
+                        mAdapter = new MyAdapter(soon);
+                        mFlActivityCrowdfunding.setAdapter(mAdapter);
                     }
 
             }

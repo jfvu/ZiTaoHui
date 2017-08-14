@@ -34,6 +34,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mIntent = getIntent();
+        int i = mIntent.getIntExtra("MainActivity",0);
         myFregmentAdapter = new MyFregmentAdapter(getSupportFragmentManager(),getApplication());
         vpActivityMain.setAdapter(myFregmentAdapter);
         tlActivityMain.setupWithViewPager(vpActivityMain);
@@ -50,6 +52,7 @@ public class MainActivity extends BaseActivity {
         if (mIntent.getIntExtra("MainActivity",0)==4){
             vpActivityMain.setCurrentItem(0);
         }*/
+       vpActivityMain.setCurrentItem(i);
     }
 
     @Override

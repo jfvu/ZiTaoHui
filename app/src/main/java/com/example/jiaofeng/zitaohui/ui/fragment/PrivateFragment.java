@@ -1,6 +1,6 @@
 package com.example.jiaofeng.zitaohui.ui.fragment;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,13 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.CustomizeActivity;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -60,7 +59,8 @@ public class PrivateFragment extends BaseFragment {
             holder.mLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), CustomizeActivity.class));
                 }
             });
 

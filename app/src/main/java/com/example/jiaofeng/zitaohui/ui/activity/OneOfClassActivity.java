@@ -144,7 +144,7 @@ public class OneOfClassActivity extends BaseActivity {
                 slidingMenu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
                 slidingMenu.setMenu(R.layout.right_menu);*/
                 if (mHistoryPop == null) {
-                    mHistoryPop = new HistoryPop(getApplicationContext());
+                    mHistoryPop = new HistoryPop(getApplicationContext(),onClickListener);
                 }
                 mHistoryPop.showAtLocation(this.findViewById(R.id.rl_title_activity_oneofclass), Gravity.RIGHT, 0, 0);
                 break;
@@ -240,6 +240,10 @@ public class OneOfClassActivity extends BaseActivity {
                 case R.id.ll_link_share:
                     mPop.dismiss();
                     break;
+                case R.id.btn_find_menu:
+                    startActivity(new Intent(OneOfClassActivity.this,SimilarActivity.class));
+                    break;
+
             }
         }
     };
@@ -253,4 +257,5 @@ public class OneOfClassActivity extends BaseActivity {
         }
         return true;
     }
+
 }
