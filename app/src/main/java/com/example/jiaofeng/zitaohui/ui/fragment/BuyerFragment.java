@@ -12,6 +12,8 @@ import com.example.jiaofeng.zitaohui.ui.activity.ComplaintActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.CustomerServicesActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.PersonalDataActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.RechargeActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -76,8 +78,13 @@ public class BuyerFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_head_fragment_buy:
+                mIntent = new Intent(getActivity(), PersonalDataActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_account_fragment_buy:
+                mIntent = new Intent(getActivity(), RechargeActivity.class);
+                mIntent.putExtra("RechargeActivity",0);
+                startActivity(mIntent);
                 break;
             case R.id.rl_message_fragment_buy:
                 mIntent = new Intent(getActivity(), MessageActivity.class);

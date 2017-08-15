@@ -88,6 +88,24 @@
         </activity>
         <activity android:name=".ui.activity.SpeciallyActivity">
         </activity>
+        <activity android:name=".ui.activity.PersonalDataActivity">
+        </activity>
+        <activity android:name=".ui.activity.SignatureActivity">
+        </activity>
+        <activity android:name=".ui.activity.RechargeActivity">
+        </activity>
+        <activity android:name=".ui.activity.DetailActivity">
+        </activity>
+        <activity android:name=".ui.activity.SafetyActivity">
+        </activity>
+        <activity android:name=".ui.activity.ResetPasswordActivity">
+        </activity>
+        <activity android:name=".ui.activity.ForgetPassword1Activity">
+        </activity>
+        <activity android:name=".ui.activity.SetPasswordActivity">
+        </activity>
+        <activity android:name=".ui.activity.CouponActivity">
+        </activity>
     </application>
 
 </manifest>

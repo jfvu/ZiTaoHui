@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.PersonalDataActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.RechargeActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.SellOrderActivity;
 
 import butterknife.BindView;
@@ -87,8 +89,13 @@ public class SellerFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_head_fragment_sell:
+                mIntent = new Intent(getActivity(), PersonalDataActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_account_fragment_sell:
+                mIntent = new Intent(getActivity(), RechargeActivity.class);
+                mIntent.putExtra("RechargeActivity",1);
+                startActivity(mIntent);
                 break;
             case R.id.rl_message_fragment_sell:
                 mIntent = new Intent(getActivity(), MessageActivity.class);

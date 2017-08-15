@@ -35,7 +35,8 @@ public class BuyOrderActivity extends BaseActivity {
     @Override
     protected void initView() {
         mIntent = getIntent();
-        int i = mIntent.getIntExtra("BuyOrderActivity",0);
+        int i = mIntent.getIntExtra("BuyOrderActivity",6);
+        int j = mIntent.getIntExtra("RechargeActivity",6);
         myFregmentAdapter5 = new MyFregmentAdapter5(getSupportFragmentManager(),BuyOrderActivity.this);
         mVpActivityBuyorder.setAdapter(myFregmentAdapter5);
         mTlActivityBuyorder.setupWithViewPager(mVpActivityBuyorder);
@@ -48,7 +49,9 @@ public class BuyOrderActivity extends BaseActivity {
         mTlActivityBuyorder.setTabGravity(TabLayout.GRAVITY_FILL);
         mVpActivityBuyorder.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTlActivityBuyorder));
         mTlActivityBuyorder.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mVpActivityBuyorder));
-        mVpActivityBuyorder.setCurrentItem(i);
+        if (i != 6 ){mVpActivityBuyorder.setCurrentItem(i);}
+        if (j != 6){mVpActivityBuyorder.setCurrentItem(j);}
+
     }
 
     @Override
