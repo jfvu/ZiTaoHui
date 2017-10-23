@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<RelativeLayout
+    android:id="@+id/rl_1"
+    android:layout_width="match_parent"
+    android:layout_height="70px"
+    android:background="@drawable/item_bg"
+    android:layout_marginLeft="12px"
+    android:layout_marginRight="12px"
+    android:layout_marginTop="8px">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/promotion_coupons"
+        />
+</RelativeLayout>
+</RelativeLayout>

@@ -34,48 +34,53 @@
             android:textSize="17px"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="40px"
         android:background="#ffffff"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         >
+
         <RadioButton
             android:id="@+id/rb_use"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:background="@drawable/select_aitabin"
             android:button="@null"
+            android:gravity="center"
             android:text="可使用"
-            android:textSize="28px"
             android:textColor="@drawable/selct_rb_font"
-            android:background="@drawable/select_aitabin"/>
+            android:textSize="28px"/>
+
         <RadioButton
             android:id="@+id/rb_used"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:button="@null"
-            android:text="已使用"
-            android:textSize="28px"
-            android:textColor="@drawable/selct_rb_font"
             android:background="@drawable/select_aitabin"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已使用"
+            android:textColor="@drawable/selct_rb_font"
+            android:textSize="28px"
             />
+
         <RadioButton
             android:id="@+id/rb_pass"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
+            android:background="@drawable/select_aitabin"
             android:button="@null"
+            android:gravity="center"
             android:text="已过期"
-            android:textSize="28px"
             android:textColor="@drawable/selct_rb_font"
-            android:background="@drawable/select_aitabin"/>
+            android:textSize="28px"/>
     </RadioGroup>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_activity_coupon"
         android:layout_width="match_parent"

@@ -16,13 +16,18 @@ import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
     private Unbinder unbinder;
-
+    public static int mInt;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), null);
         unbinder = ButterKnife.bind(this, view);
-        return view;
+        Bundle args = getArguments();
+        if (args != null) {
+            mInt = args.getInt("mInt");
+
+        }
+            return view;
     }
 
     protected abstract int getLayoutId();

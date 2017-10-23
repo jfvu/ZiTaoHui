@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<LinearLayout
+    android:id="@+id/ll_1"
+    android:layout_width="match_parent"
+    android:layout_height="52px"
+    android:orientation="horizontal"
+    android:layout_marginTop="8px"
+    android:background="#ffffff">
+    <ImageView
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/attention_head"
+        android:layout_marginLeft="12px"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginLeft="5px">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名字"
+                android:textColor="#E6121212"
+                android:textSize="12px"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fans_level"
+                android:layout_marginLeft="5px"
+                android:layout_gravity="bottom"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="爱好者"
+                android:textColor="#FF5F3104"
+                android:textSize="7px"
+                android:layout_marginLeft="3px"/>
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信/电话：123456"
+                android:textColor="#40121212"
+                android:textSize="10px"
+                android:layout_marginTop="5px"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="49px"
+            android:layout_height="23px"
+            android:layout_gravity="center_vertical"
+            android:text="已关注"
+            android:textColor="#FF5F3104"
+            android:textSize="12px"
+            android:background="@drawable/shape_fans"
+            android:gravity="center"/>
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="@drawable/select_fansremind"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="12px"/>
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>

@@ -14,6 +14,7 @@ import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MyHistoryActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.PersonalDataActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.RechargeActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.SchoolActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -131,7 +132,7 @@ public class BuyerFragment extends BaseFragment {
             case R.id.ll_appreciate_fragment_buy:
                 break;
             case R.id.ll_school_fragment_buy:
-                mIntent = new Intent(getActivity(), ComplaintActivity.class);
+                mIntent = new Intent(getActivity(), SchoolActivity.class);
                 startActivity(mIntent);
                 break;
             case R.id.ll_service_fragment_buy:

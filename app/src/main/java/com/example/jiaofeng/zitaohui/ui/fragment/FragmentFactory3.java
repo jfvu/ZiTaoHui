@@ -11,22 +11,22 @@ public class FragmentFactory3 {
         BaseFragment baseFragment = null;
         switch (pos) {
             case 0:
-                baseFragment = new ClassCenterFragment(24);
+                baseFragment = ClassCenterFragment.newInstance(24);
                 break;
             case 1:
-                baseFragment = new ClassCenterFragment(8);
+                baseFragment = ClassCenterFragment.newInstance(8);
                 break;
             case 2:
-                baseFragment = new ClassCenterFragment(33);
+                baseFragment = ClassCenterFragment.newInstance(33);
                 break;
             case 3:
-                baseFragment = new ClassCenterFragment(55);
+                baseFragment = ClassCenterFragment.newInstance(55);
                 break;
             case 4:
-                baseFragment = new ClassCenterFragment(66);
+                baseFragment = ClassCenterFragment.newInstance(66);
                 break;
             case 5:
-                baseFragment = new ClassCenterFragment(88);
+                baseFragment = ClassCenterFragment.newInstance(88);
                 break;
         }
         return baseFragment;

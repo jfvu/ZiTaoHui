@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiaofeng.zitaohui.ui.activity.ContactsActivity"
+    android:background="#f8f8f8">
+<LinearLayout
+    android:id="@+id/ll_status_activity_contacts"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_title_activity_contacts"
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_status_activity_contacts"
+        android:layout_height="44px"
+        android:background="#242424">
+        <ImageView
+            android:id="@+id/img_return_activity_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/all_return"
+            android:padding="12px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择收信人"
+            android:textColor="#FFFFFFFF"
+            android:textSize="17px"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:padding="12px"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_next"
+        android:layout_width="match_parent"
+        android:layout_height="48px"
+        android:layout_alignParentBottom="true"
+        android:background="#FF242424"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16px"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_contacts"
+        android:layout_below="@id/rl_title_activity_contacts"
+        android:layout_above="@id/rl_next"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.gjiazhe.wavesidebar.WaveSideBar
+        android:id="@+id/side_bar"
+        android:layout_below="@id/rl_title_activity_contacts"
+        android:layout_above="@id/rl_next"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        app:sidebar_text_color="#FF5F3104"/>
+
+</RelativeLayout>

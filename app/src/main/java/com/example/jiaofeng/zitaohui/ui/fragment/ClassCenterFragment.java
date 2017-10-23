@@ -3,6 +3,7 @@ package com.example.jiaofeng.zitaohui.ui.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jiaofeng.zitaohui.App;
+
 import com.example.jiaofeng.zitaohui.R;
 import com.example.jiaofeng.zitaohui.ui.activity.OneOfClassActivity;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -38,9 +39,20 @@ public class ClassCenterFragment extends BaseFragment {
     private Intent mIntent;
 
 
-    public ClassCenterFragment(int anInt) {
+    /*public ClassCenterFragment(int anInt) {
         mInt = anInt;
+    }*/
+
+    public static ClassCenterFragment newInstance(int mInt) {
+        ClassCenterFragment newFragment = new ClassCenterFragment();
+        //ClassCenterFragment testFragment=ClassCenterFragment.newInstance("name","passwd");
+        Bundle bundle = new Bundle();
+        bundle.putInt("mInt", mInt);
+        newFragment.setArguments(bundle);
+        return newFragment;
+
     }
+
 
     @Override
     protected int getLayoutId() {
@@ -54,7 +66,9 @@ public class ClassCenterFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        if (BaseFragment.mInt!=0){
+            mInt = BaseFragment.mInt;
+        }
 
         mRvClasscenter.setLayoutManager(new GridLayoutManager(getActivity(),4));
         mRvClasscenter.setAdapter(new QuickAdapter());
@@ -72,6 +86,7 @@ public class ClassCenterFragment extends BaseFragment {
 
         @Override
         public void onBindViewHolder(ContactsViewHolder holder, final int position) {
+
             List<Entityclass> list = getEetityclasses(mInt);
 
            holder.tvIndex.setText(list.get(position).getName());

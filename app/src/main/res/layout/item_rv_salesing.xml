@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="89px"
+    android:background="#ffffff"
+    android:layout_marginTop="1px"
+    android:gravity="center_vertical"
+                android:id="@+id/rl_1"
+                android:layout_marginBottom="8px"
+              >
+<ImageView
+    android:layout_width="73px"
+    android:layout_height="73px"
+    android:background="@drawable/item_img"
+    android:layout_marginLeft="12px"
+    android:layout_centerVertical="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90px"
+        android:layout_marginTop="8px"
+        android:text="内容内容内容内容内容内容"
+        android:textColor="#E6121212"
+        android:textSize="14px"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="12px"
+        android:layout_marginBottom="5px">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/salesmanage_code"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07.05"
+            android:textColor="#E6121212"
+            android:textSize="8px"
+            android:layout_marginTop="16px"
+    />
+    </LinearLayout>
+</RelativeLayout>

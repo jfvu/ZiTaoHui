@@ -10,10 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jiaofeng.zitaohui.R;
+import com.example.jiaofeng.zitaohui.ui.activity.ExpandActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.MassActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.MessageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.PersonalDataActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.PromotionActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.RechargeActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.Report1Activity;
+import com.example.jiaofeng.zitaohui.ui.activity.ReportActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.SalesManageActivity;
 import com.example.jiaofeng.zitaohui.ui.activity.SellOrderActivity;
+import com.example.jiaofeng.zitaohui.ui.activity.SetCenterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -125,17 +132,28 @@ public class SellerFragment extends BaseFragment {
 
                 break;
             case R.id.ll_report_fragment_sell:
-
+                mIntent = new Intent(getActivity(), Report1Activity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_manage_fragment_sell:
+                mIntent = new Intent(getActivity(), SalesManageActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_generalize_fragment_sell:
+                mIntent = new Intent(getActivity(), PromotionActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_mese_fragment_sell:
+                mIntent = new Intent(getActivity(), MassActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_extend_fragment_sell:
+                mIntent = new Intent(getActivity(), ExpandActivity.class);
+                startActivity(mIntent);
                 break;
             case R.id.rl_set_fragment_sell:
+                mIntent = new Intent(getActivity(), SetCenterActivity.class);
+                startActivity(mIntent);
                 break;
         }
     }

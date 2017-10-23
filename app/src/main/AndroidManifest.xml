@@ -106,6 +106,70 @@
         </activity>
         <activity android:name=".ui.activity.CouponActivity">
         </activity>
+        <activity android:name=".ui.activity.SalesManageActivity">
+        </activity>
+        <activity android:name=".ui.activity.PromotionActivity">
+        </activity>
+        <activity android:name=".ui.activity.NewPromotionActivity">
+        </activity>
+        <activity android:name=".ui.activity.MassActivity">
+        </activity>
+        <activity android:name=".ui.activity.ContactsActivity">
+        </activity>
+        <activity android:name=".ui.activity.EditMessageActivity">
+        </activity>
+        <activity android:name=".ui.activity.ExpandActivity">
+        </activity>
+        <activity android:name=".ui.activity.BypassActivity">
+        </activity>
+        <activity android:name=".ui.activity.EditBypassActivity">
+        </activity>
+        <activity android:name=".ui.activity.FastSendActivity">
+        </activity>
+        <activity android:name=".ui.activity.EditFastSendActivity">
+        </activity>
+        <activity android:name=".ui.activity.SetCenterActivity">
+        </activity>
+        <activity android:name=".ui.activity.Approve1Activity">
+        </activity>
+        <activity android:name=".ui.activity.Approve2Activity">
+        </activity>
+        <activity android:name=".ui.activity.Approve3Activity">
+        </activity>
+        <activity android:name=".ui.activity.Approve4Activity">
+        </activity>
+        <activity android:name=".ui.activity.Approve5Activity">
+        </activity>
+        <activity android:name=".ui.activity.LoctionActivity">
+        </activity>
+        <activity android:name=".ui.activity.ChooseLoactionActivity">
+        </activity>
+        <activity android:name=".ui.activity.CashActivity">
+        </activity>
+        <activity android:name=".ui.activity.CashLogActivity">
+        </activity>
+        <activity android:name=".ui.activity.AuctionSetActivity">
+        </activity>
+        <activity android:name=".ui.activity.CouponsActivity">
+        </activity>
+        <activity android:name=".ui.activity.AddConponActivity">
+        </activity>
+        <activity android:name=".ui.activity.DiscountActivity">
+        </activity>
+        <activity android:name=".ui.activity.BidSetActivity">
+        </activity>
+        <activity android:name=".ui.activity.FansActivity">
+        </activity>
+        <activity android:name=".ui.activity.ShieldActivity">
+        </activity>
+        <activity android:name=".ui.activity.SetAuctionActivity">
+        </activity>
+        <activity android:name=".ui.activity.SchoolActivity">
+        </activity>
+        <activity android:name=".ui.activity.ReportActivity">
+        </activity>
+        <activity android:name=".ui.activity.Report1Activity">
+        </activity>
     </application>
 
 </manifest>
